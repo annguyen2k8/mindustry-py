@@ -1,7 +1,7 @@
 from .ZStreamRef import ZStreamRef
 import threading
 
-class InFlare:
+class Inflare:
     __zsRef:ZStreamRef
     __buf:bytearray
     __off:int
@@ -10,86 +10,82 @@ class InFlare:
     __needDict:bool
     __bytesRead:int
     __byteWritten:int
-    __defaultBuf:bytearray=bytearray()
+    __defaultBuf:bytearray=bytearray(0)
+    
+    @property
+    def zsRef(self) -> ZStreamRef:
+        return self.__zsRef
+    
+    @zsRef.setter
+    def zsRef(self, value:ZStreamRef):
+        self.__zsRef = value
+    
+    @property
+    def buf(self) -> bytearray:
+        return self.__buf
+    
+    @buf.setter
+    def buf(self, value:bytearray):
+        self.__buf = value
+    
+    @property
+    def off(self) -> int:
+        return self.__off
+    
+    @off.setter
+    def off(self, value:int):
+        self.__off = value
+    
+    @property
+    def len(self) -> int:
+        return self.__len
+    
+    @len.setter
+    def len(self, value:int):
+        self.__len = value
+    
+    @property
+    def finished(self) -> bool:
+        return self.__finished
+    
+    @finished.setter
+    def finished(self, value:bool):
+        self.__finished = value
+    
+    @property
+    def needDict(self) -> bool:
+        return self.__needDict
+    
+    @needDict.setter
+    def needDict(self, value:bool):
+        self.__needDict = value
+    
+    @property
+    def bytesRead(self) -> int:
+        return self.__bytesRead
+    
+    @bytesRead.setter
+    def bytesRead(self, value:int):
+        self.__bytesRead = value
+    
+    @property
+    def byteWritten(self) -> int:
+        return self.__byteWritten
+    
+    @byteWritten.setter
+    def byteWritten(self, value:int):
+        self.__byteWritten = value
+    
+    @property
+    def defaultBuf(self) -> bytearray:
+        return self.__defaultBuf
     
     def __init__(self, var1:bool=None):
         if (var1 is not None):
             self.buf = self.defaultBuf
             self.zsRef = ZStreamRef(self._init(var1))
         else:
-            self(False)
-    
-    @property
-    def zsRef(self):
-        return self.__zsRef
-    
-    @zsRef.setter
-    def set_zsRef(self, value):
-        self.__zsRef = value
-    
-    @property
-    def buf(self):
-        return self.__buf
-    
-    @buf.setter
-    def set_buf(self, value):
-        self.__buf = value
-    
-    @property
-    def off(self):
-        return self.__off
-    
-    @off.setter
-    def set_off(self, value):
-        self.__off = value
-    
-    @property
-    def len(self):
-        return self.__len
-    
-    @len.setter
-    def set_len(self, value):
-        self.__len = value
-    
-    @property
-    def finished(self):
-        return self.__finished
-    
-    @finished.setter
-    def set_finished(self, value):
-        self.__finished = value
-    
-    @property
-    def needDict(self):
-        return self.__needDict
-    
-    @needDict.setter
-    def set_needDict(self, value):
-        self.__needDict = value
-    
-    @property
-    def bytesRead(self):
-        return self.__bytesRead
-    
-    @bytesRead.setter
-    def set_bytesRead(self, value):
-        self.__bytesRead = value
-    
-    @property
-    def byteWritten(self):
-        return self.__byteWritten
-    
-    @byteWritten.setter
-    def set_byteWritten(self, value):
-        self.__byteWritten = value
-    
-    @property
-    def defaultBuf(self):
-        return self.__defaultBuf
-    
-    @defaultBuf.setter
-    def set_defaultBuf(self, value):
-        self.__defaultBuf = value
+            self.__init__(False)
     
     def setInput(self, var1:bytes, var2:int=None, var3:int=None) -> None:
         if (var2 is None and var3 is None): 
@@ -187,34 +183,31 @@ class InFlare:
     
     def ended(self) -> bool:
         with self.zsRef:
-            return self.zsRef.address == 0
-    
-    
+            return self.zsRef.address == 0    
     
     @staticmethod
-    def _initID(self) -> None:
+    def _initID() -> None:
         pass
     
     @staticmethod
-    def _init(self, var0:bool):
+    def _init(var0:bool) -> bool:
         pass
     
     @staticmethod
-    def setDictionary(self, var0:int, var2:bytes, var3:int, var4:int) -> None:
+    def setDictionary(var0:int, var2:bytes, var3:int, var4:int) -> None:
         pass
     
-    @staticmethod
     def inflateBytes(self, var0:int, var2:bytes, var3:int, var4:int) -> None:
         pass
     
     @staticmethod
-    def _getAdler(self, var1:int) -> int:
+    def _getAdler(var1:int) -> int:
         pass
     
     @staticmethod
-    def _reset(self, var0:int) -> None:
+    def _reset(var0:int) -> None:
         pass
     
     @staticmethod
-    def _end(self, var0:int) -> None:
+    def _end(var0:int) -> None:
         pass

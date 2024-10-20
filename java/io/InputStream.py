@@ -6,18 +6,14 @@ class InputStream(ABC):
     MAX_SKIP_BUFFER_SIZE:int = 2048
     def __init__(self):
         super().__init__()
-        self._lock = threading.Lock()
+        self.lock = threading.Lock()
         pass
     
-    @abstractmethod
-    def read(self) -> int:
-        raise NotImplementedError("Subclasses should implement this!")
-    
-    def _read(self, var1:bytes=None, var2:int=None, var3:int=None) -> int:
+    def read(self, var1:bytes=None, var2:int=None, var3:int=None) -> int:
         if (var1 is None):
             raise ValueError("NullPointerException")
         elif (var2 == None and var3 == None): 
-            return self.read(var1, 0, len(var1))
+            var2 = 0; var3 = len(var1)
         elif (var2 >= 0 and var3 >= 0 and var3 <= len(var1) - var2):
             if (var3 == 0):
                 return 0
