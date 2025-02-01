@@ -1,1 +1,1 @@
-from mindustry.ctype.contentType import *
+from .content_type import *
