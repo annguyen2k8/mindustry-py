@@ -1,10 +1,9 @@
 import io
 import base64
 
-from .io.stream import *
-from .io.type import *
+from .io import *
 
-from .math.geom import *
+from .math import *
 
 from .schematic import *
 from .content import *
@@ -68,7 +67,9 @@ class Schematics:
             print()
 
         out:Schematic = Schematic(tiles, tags, width, height)
-        
+        if labels != None:
+            out.labels.extend(labels)
+        return out
 
     @staticmethod
     def mapConfig(block, value, position) -> object:

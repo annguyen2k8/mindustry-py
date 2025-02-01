@@ -1,0 +1,1 @@
+from mindustry.ctype.contentType import *
