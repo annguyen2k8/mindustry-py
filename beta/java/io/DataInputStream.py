@@ -72,8 +72,11 @@ class DataInputSteam(FilterInputStream, DataInput):
         else:
             return int((var1 << 8) + (var2 << 0))
     
+    # function readUnsignedShort same as function readShort
+    # idk why?
+    
     def readUnsignedShort(self) -> int:
-        var1:int = self._in.read()
+        var1:int = self._in.read()  
         var2:int = self._in.read()
         if ((var1 | var2) < 0):
             raise Exception()

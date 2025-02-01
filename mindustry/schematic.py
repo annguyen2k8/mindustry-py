@@ -45,3 +45,6 @@ class Stile:
     
     def copy(self) -> None:
         return Stile(self.block, self.x, self.y, self.config, self.rotation)
+    
+    def __repr__(self) -> str:
+        pass

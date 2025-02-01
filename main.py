@@ -1,6 +1,6 @@
-from mindustry import Schematics
+from mindustry.schematics import Schematics
 
 if __name__ == "__main__":
-    Schematics = Schematics()
-    with open("schem/file.msch", "rb") as f:
-        Schematics.read(f)
+    # with open("schem/debug-config.msch", "rb") as f:
+    #     Schematics.read(f)
+    Schematics.readBase64(input('>'))
