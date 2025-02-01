@@ -51,10 +51,8 @@ class ByteArrayInputStream(InputStream):
         else:
             return -1
 
-    def _read(self, var1:bytes, var2:int=None, var3:int=None) -> int:
-        if (var2 is None and var3 is None): 
-            return self._read(var1, 0, len(var1))
-        elif (var2 >= 0 and var3 >= 0 and var3 <= len(var1) - var2):
+    def read_into(self, var1:bytes, var2:int, var3:int) -> int:
+        if (var2 >= 0 and var3 >= 0 and var3 <= len(var1) - var2):
             if(self.pos >= self.count):
                 return -1
             else:
@@ -74,9 +72,11 @@ class ByteArrayInputStream(InputStream):
         var3:int = self.count - self.pos
         if (var1 < var3):
             var3 = 0 if var1 < 0 else var1
+        return var3
     
     def available(self) -> int:
-        return self.count - self.pos
+        with self:
+            return self.count - self.pos
     
     def markSupported(self) -> bool:
         return True

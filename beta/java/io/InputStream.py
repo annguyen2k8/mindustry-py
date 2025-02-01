@@ -3,18 +3,19 @@ from abc import abstractmethod
 import threading
 
 class InputStream(ABC):
-    MAX_SKIP_BUFFER_SIZE:int = 2048
+    __MAX_SKIP_BUFFER_SIZE:int = 2048
     def __init__(self):
         super().__init__()
         self.lock = threading.Lock()
+    
+    def read(self) -> int:
         pass
     
-    def read(self, var1:bytes=None, var2:int=None, var3:int=None) -> int:
-        if (var1 is None):
-            raise ValueError("NullPointerException")
-        elif (var2 == None and var3 == None): 
-            var2 = 0; var3 = len(var1)
-        elif (var2 >= 0 and var3 >= 0 and var3 <= len(var1) - var2):
+    def read_bytes(self, var1:bytearray) -> int:
+        return self.read_into(var1, 0, len(var1))
+    
+    def read_into(self, var1:bytes, var2:int, var3:int) -> int:
+        if (var2 >= 0 and var3 >= 0 and var3 <= len(var1) - var2):
             if (var3 == 0):
                 return 0
             else:
@@ -45,7 +46,7 @@ class InputStream(ABC):
             var5:int
             var7 = bytearray(var6)
             while var3 > 0:
-                var5 = self._read(var7, 0, min(var6, var3))
+                var5 = self.read_into(var7, 0, min(var6, var3))
                 if var5 < 0:
                     break
                 var3 -= var5

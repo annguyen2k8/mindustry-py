@@ -13,10 +13,12 @@ class DataInputSteam(FilterInputStream, DataInput):
     def __init__(self, var1: InputStream):
         super().__init__(var1)
     
-    def read(self, var1:bytearray, var2:int=None, var3:int=None) -> int:
-        if (var2 is None and var2 is None):
-            var2 = 0; var3 = len(var1)
-        return self._in.read(var1, var2, var3)
+    def read(self, var1:bytearray) -> int:
+        return self._in.read_into(var1, 0, len(var1))
+    
+    
+    def read_into(self, var1:bytearray, var2:int=None, var3:int=None) -> int:
+        return self._in.read_into(var1, var2, var3)
     
     def readFully(self, var1:bytearray, var2:int, var3:int) -> int:
         if (var2 is None and var3 is None):

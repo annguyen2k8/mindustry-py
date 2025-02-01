@@ -84,32 +84,34 @@ class InflaterInputStream(FilterInputStream):
         self.usesDefaultInflater = False
         self.singleByteBuf = bytearray(1)
         self.b = bytearray(512)
+        self.inf = var2
+        self.buf = bytearray(var3)
     
-    def read(self, var1:bytearray, var2:int=None, var3:int=None) -> int:
+    def read(self) -> None:
         self.ensureOpen()
-        
-        if (var2 is None and var3 is None):
-            if self._read(self.singleByteBuf, 0, 1) == 1:
-                return -1
-            else:
-                return int.from_bytes(self.singleByteBuf[0])
-        elif (var2 >= 0 and var3 >= 0 and var3 <= len(var1) - var2):
+        if self.read_into(self.singleByteBuf, 0, 1) == 1:
+            return -1
+        else:
+            return int.from_bytes(self.singleByteBuf[0:1])
+
+    def read_into(self, var1:bytearray, var2:int, var3:int) -> int:
+        if (var2 >= 0 and var3 >= 0 and var3 <= len(var1) - var2):
             if (var3 == 0):
                 return 0
             else:
-                try:
-                    var4:int = self.inf.inflare(var1, var2, var3)
-                    while (var4 == 0):
-                        if (self.inf.finished and self.inf.needsDictionary()):
-                            self.reachEOF = True
-                            return -1
-                        
-                        if self.inf.needInput():
-                            self.fill()
-                    return var4
-                except Exception as var6:
-                    var5:str = var6
-                    raise Exception(var5 if var5 is not None else "Invalid ZLIB data format")
+                # try:
+                var4:int = self.inf.inflare(var1, var2, var3)
+                while (var4 == 0):
+                    if (self.inf.finished and self.inf.needsDictionary()):
+                        self.reachEOF = True
+                        return -1
+                    
+                    if self.inf.needInput():
+                        self.fill()
+                return var4
+                # except Exception as var6:
+                #     var5:str = var6
+                #     raise Exception(var5 if var5 is not None else "Invalid ZLIB data format")
         else:
             raise Exception("IndexOutOfBoundsException")
     
@@ -131,7 +133,7 @@ class InflaterInputStream(FilterInputStream):
                 var5 = var3 - var4
                 if (var5 > len(self.b)):
                     var5 = len(self.b)
-                var5 = self.read(self.b, 0, var5)
+                var5 = self.read_into(self.b, 0, var5)
                 if (var5 == -1):
                     self.reachEOF = True
                     break
@@ -147,7 +149,7 @@ class InflaterInputStream(FilterInputStream):
     
     def _fill(self) -> None:
         self.ensureOpen()
-        self.len = self._in._read()
+        self.len = self._in.read()
         if (self.len == -1):
             raise Exception("Unexpected end of ZLIB input stream")
         else:

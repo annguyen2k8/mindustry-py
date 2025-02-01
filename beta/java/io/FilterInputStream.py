@@ -6,13 +6,15 @@ class FilterInputStream(InputStream):
         super().__init__()
         self._in = var1
     
-    def read(self, var1:bytes, var2:int=None, var3:int=None) -> int:
-        if var1 is None:
-            return self._in.read()
-        if (var2 is None and var3 is None): 
-            var2 = 0; var3 = len(var)
-        return self._in.read(var1, var2, var3)
-
+    def read(self) -> int:
+        return self._in.read()
+    
+    def read_bytes(self, var1):
+        return self.read_into(var1, 0, len(var1))
+    
+    def read_into(self, var1:bytes, var2:int, var3:int) -> int:
+        return self._in.read_into(var1, var2, var3)
+    
     def skip(self, var1:int) -> int:
         return self._in.skip(var1)
     

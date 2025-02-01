@@ -3,13 +3,13 @@ import threading
 
 class Inflare:
     __zsRef:ZStreamRef
-    __buf:bytearray
-    __off:int
-    __len:int
-    __finished:bool
-    __needDict:bool
-    __bytesRead:int
-    __byteWritten:int
+    __buf:bytearray = bytearray()
+    __off:int = 0
+    __len:int = 0
+    __finished:bool = None
+    __needDict:bool = None
+    __bytesRead:int = 0
+    __byteWritten:int = 0
     __defaultBuf:bytearray=bytearray(0)
     
     @property
@@ -113,7 +113,7 @@ class Inflare:
         with self.zsRef:
             return self.len
     
-    def needInput(self) -> bool:
+    def needsInput(self) -> bool:
         with self.zsRef:
             return self.__len <= 0
     
@@ -128,7 +128,7 @@ class Inflare:
             with self.zsRef:
                 self.__ensureOpen()
                 var5:int = self.len
-                var6:int =self.inflareByte(self.zsRef.address, var1, var2, var3)
+                var6:int = self.inflateBytes(self.zsRef.address, var1, var2, var3)
                 self.byteWritten += var6
                 self.bytesRead += var5 - self.len
         else:
@@ -198,7 +198,7 @@ class Inflare:
         pass
     
     def inflateBytes(self, var0:int, var2:bytes, var3:int, var4:int) -> None:
-        pass
+        return 0
     
     @staticmethod
     def _getAdler(var1:int) -> int:

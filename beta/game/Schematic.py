@@ -1,5 +1,5 @@
 from __future__ import annotations
-from mindustry.content import *
+from beta.content import *
 
 class Schematic:
     tiles:list[Stile]
