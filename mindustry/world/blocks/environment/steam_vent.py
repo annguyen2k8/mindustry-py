@@ -1,11 +1,11 @@
 from typing import *
 
-from mindustry.content import *
-from mindustry.math import *
+from mindustry.content.blocks import *
 from mindustry.graphics import *
+from mindustry.world import *
+from mindustry.math import *
 
 from .floor import Floor
-from ...block import Block
 
 class SteamVent(Floor):
     offsets: List[Point2] = [
@@ -20,7 +20,7 @@ class SteamVent(Floor):
         Point2(1, -1),
     ]
     
-    parent:Block = Blocks.air
+    
     effect_color:Color = Pal.vent
     effect_spacing:float = 15.0
     
@@ -30,3 +30,4 @@ class SteamVent(Floor):
     def __init__(self, name):
         super().__init__(name)
         self.variants = 2
+        self.parent = None

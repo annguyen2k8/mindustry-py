@@ -1,4 +1,4 @@
-from ...block import Block
+from mindustry.world.block import *
 
 class RemoveWall(Block):
     def __init__(self, name):

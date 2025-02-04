@@ -1,437 +1,443 @@
 from mindustry.world.blocks import *
+from mindustry.world.meta import *
 from mindustry.graphics import *
 from mindustry.type import *
 from mindustry.vars import *
 
+# from mindustry.world.block import Block
+
 class Blocks:
     # environment
-    air:Block = None
-    spawn:Block = None
-    remove_wall:Block = None
-    remove_ore:Block = None
-    cliff:Block = None
-    deepwater:Block = None
-    water:Block = None
-    tainted_water:Block = None
-    deep_tainted_water:Block = None
-    tar:Block = None
-    slag:Block = None
-    cryofluid:Block = None
-    stone:Block = None
-    craters:Block = None
-    charr:Block = None
-    sand:Block = None
-    darksand:Block = None
-    dirt:Block = None
-    mud:Block = None
-    ice:Block = None
-    snow:Block = None
-    darksand_tainted_water:Block = None
-    space:Block = None
-    empty:Block = None
-    dacite:Block = None
-    rhyolite:Block = None
-    rhyolite_crater:Block = None
-    rough_rhyolite:Block = None
-    regolith:Block = None
-    yellow_stone:Block = None
-    red_ice:Block = None
-    red_stone:Block = None
-    dense_red_stone:Block = None
-    arkycite_floor:Block = None
-    arkyic_stone:Block = None
-    redmat:Block = None
-    bluemat:Block = None
-    stone_wall:Block = None
-    dirt_wall:Block = None
-    spore_wall:Block = None
-    ice_wall:Block = None
-    dacite_wall:Block = None
-    spore_pine:Block = None
-    snow_pine:Block = None
-    pine:Block = None
-    shrubs:Block = None
-    white_tree:Block = None
-    white_tree_dead:Block = None
-    spore_cluster:Block = None
-    redweed:Block = None
-    purbush:Block = None
-    yellow_coral:Block = None
-    rhyolite_vent:Block = None
-    carbon_vent:Block = None
-    arkyic_vent:Block = None
-    yellow_stone_vent:Block = None
-    red_stone_vent:Block = None
-    crystalline_vent:Block = None
-    regolith_wall:Block = None
-    yellow_stone_wall:Block = None
-    rhyolite_wall:Block = None
-    carbon_wall:Block = None
-    red_ice_wall:Block = None
-    ferric_stone_wall:Block = None
-    beryllic_stone_wall:Block = None
-    arkyic_wall:Block = None
-    crystalline_stone_wall:Block = None
-    red_stone_wall:Block = None
-    red_diamond_wall:Block = None
-    ferric_stone:Block = None
-    ferric_craters:Block = None
-    carbon_stone:Block = None
-    beryllic_stone:Block = None
-    crystalline_stone:Block = None
-    crystal_floor:Block = None
-    yellow_stone_plates:Block = None
-    ice_snow:Block = None
-    sand_water:Block = None
-    darksand_water:Block = None
-    dune_wall:Block = None
-    sand_wall:Block = None
-    moss:Block = None
-    spore_moss:Block = None
-    shale:Block = None
-    shale_wall:Block = None
-    grass:Block = None
-    salt:Block = None
-    core_zone:Block = None
+    air = None
+    spawn = None
+    remove_wall = None
+    remove_ore = None
+    cliff = None
+    deepwater = None
+    water = None
+    tainted_water = None
+    deep_tainted_water = None
+    tar = None
+    slag = None
+    cryofluid = None
+    stone = None
+    craters = None
+    charr = None
+    sand = None
+    darksand = None
+    dirt = None
+    mud = None
+    ice = None
+    snow = None
+    darksand_tainted_water = None
+    space = None
+    empty = None
+    dacite = None
+    rhyolite = None
+    rhyolite_crater = None
+    rough_rhyolite = None
+    regolith = None
+    yellow_stone = None
+    red_ice = None
+    red_stone = None
+    dense_red_stone = None
+    arkycite_floor = None
+    arkyic_stone = None
+    redmat = None
+    bluemat = None
+    stone_wall = None
+    dirt_wall = None
+    spore_wall = None
+    ice_wall = None
+    dacite_wall = None
+    spore_pine = None
+    snow_pine = None
+    pine = None
+    shrubs = None
+    white_tree = None
+    white_tree_dead = None
+    spore_cluster = None
+    redweed = None
+    purbush = None
+    yellow_coral = None
+    rhyolite_vent = None
+    carbon_vent = None
+    arkyic_vent = None
+    yellow_stone_vent = None
+    red_stone_vent = None
+    crystalline_vent = None
+    regolith_wall = None
+    yellow_stone_wall = None
+    rhyolite_wall = None
+    carbon_wall = None
+    red_ice_wall = None
+    ferric_stone_wall = None
+    beryllic_stone_wall = None
+    arkyic_wall = None
+    crystalline_stone_wall = None
+    red_stone_wall = None
+    red_diamond_wall = None
+    ferric_stone = None
+    ferric_craters = None
+    carbon_stone = None
+    beryllic_stone = None
+    crystalline_stone = None
+    crystal_floor = None
+    yellow_stone_plates = None
+    ice_snow = None
+    sand_water = None
+    darksand_water = None
+    dune_wall = None
+    sand_wall = None
+    moss = None
+    spore_moss = None
+    shale = None
+    shale_wall = None
+    grass = None
+    salt = None
+    core_zone = None
     # boulders
-    shale_boulder:Block = None
-    sand_boulder:Block = None
-    dacite_boulder:Block = None
-    boulder:Block = None
-    snow_boulder:Block = None
-    basalt_boulder:Block = None
-    carbon_boulder:Block = None
-    ferric_boulder:Block = None
-    beryllic_boulder:Block = None
-    yellow_stone_boulder:Block = None
-    arkyic_boulder:Block = None
-    crystal_cluster:Block = None
-    vibrant_crystal_cluster:Block = None
-    crystal_blocks:Block = None
-    crystal_orbs:Block = None
-    crystalline_boulder:Block = None
-    red_ice_boulder:Block = None
-    rhyolite_boulder:Block = None
-    red_stone_boulder:Block = None
-    metal_floor:Block = None
-    metal_floor_damaged:Block = None
-    metal_floor2:Block = None
-    metal_floor3:Block = None
-    metal_floor4:Block = None
-    metal_floor5:Block = None
-    basalt:Block = None
-    magmarock:Block = None
-    hotrock:Block = None
-    snow_wall:Block = None
-    salt_wall:Block = None
-    dark_panel1:Block = None
-    dark_panel2:Block = None
-    dark_panel3:Block = None
-    dark_panel4:Block = None
-    dark_panel5:Block = None
-    dark_panel6:Block = None
-    dark_metal:Block = None
-    pebbles:Block = None
-    tendrils:Block = None
+    shale_boulder = None
+    sand_boulder = None
+    dacite_boulder = None
+    boulder = None
+    snow_boulder = None
+    basalt_boulder = None
+    carbon_boulder = None
+    ferric_boulder = None
+    beryllic_boulder = None
+    yellow_stone_boulder = None
+    arkyic_boulder = None
+    crystal_cluster = None
+    vibrant_crystal_cluster = None
+    crystal_blocks = None
+    crystal_orbs = None
+    crystalline_boulder = None
+    red_ice_boulder = None
+    rhyolite_boulder = None
+    red_stone_boulder = None
+    metal_floor = None
+    metal_floor_damaged = None
+    metal_floor2 = None
+    metal_floor3 = None
+    metal_floor4 = None
+    metal_floor5 = None
+    basalt = None
+    magmarock = None
+    hotrock = None
+    snow_wall = None
+    salt_wall = None
+    dark_panel1 = None
+    dark_panel2 = None
+    dark_panel3 = None
+    dark_panel4 = None
+    dark_panel5 = None
+    dark_panel6 = None
+    dark_metal = None
+    pebbles = None
+    tendrils = None
     # ores
-    ore_copper:Block = None
-    ore_lead:Block = None
-    ore_scrap:Block = None
-    ore_coal:Block = None
-    ore_titanium:Block = None
-    ore_thorium:Block = None
-    ore_beryllium:Block = None
-    ore_tungsten:Block = None
-    ore_crystal_thorium:Block = None
-    wall_ore_thorium:Block = None
+    ore_copper = None
+    ore_lead = None
+    ore_scrap = None
+    ore_coal = None
+    ore_titanium = None
+    ore_thorium = None
+    ore_beryllium = None
+    ore_tungsten = None
+    ore_crystal_thorium = None
+    wall_ore_thorium = None
     # wall ores
-    wall_ore_beryllium:Block = None
-    graphitic_wall:Block = None
-    wall_ore_tungsten:Block = None
+    wall_ore_beryllium = None
+    graphitic_wall = None
+    wall_ore_tungsten = None
     # crafting
-    silicon_smelter:Block = None
-    silicon_crucible:Block = None
-    kiln:Block = None
-    graphite_press:Block = None
-    plastanium_compressor:Block = None
-    multi_press:Block = None
-    phase_weaver:Block = None
-    surge_smelter:Block = None
-    pyratite_mixer:Block = None
-    blast_mixer:Block = None
-    cryofluid_mixer:Block = None
-    melter:Block = None
-    separator:Block = None
-    disassembler:Block = None
-    spore_press:Block = None
-    pulverizer:Block = None
-    incinerator:Block = None
-    coal_centrifuge:Block = None
+    silicon_smelter = None
+    silicon_crucible = None
+    kiln = None
+    graphite_press = None
+    plastanium_compressor = None
+    multi_press = None
+    phase_weaver = None
+    surge_smelter = None
+    pyratite_mixer = None
+    blast_mixer = None
+    cryofluid_mixer = None
+    melter = None
+    separator = None
+    disassembler = None
+    spore_press = None
+    pulverizer = None
+    incinerator = None
+    coal_centrifuge = None
     # crafting - erekir
-    silicon_arc_furnace:Block = None
-    electrolyzer:Block = None
-    oxidation_chamber:Block = None
-    atmospheric_concentrator:Block = None
-    electric_heater:Block = None
-    slag_heater:Block = None
-    phase_heater:Block = None
-    heat_redirector:Block = None
-    small_heat_redirector:Block = None
-    heat_router:Block = None
-    slag_incinerator:Block = None
-    carbide_crucible:Block = None
-    slag_centrifuge:Block = None
-    surge_crucible:Block = None
-    cyanogen_synthesizer:Block = None
-    phase_synthesizer:Block = None
-    heat_reactor:Block = None
+    silicon_arc_furnace = None
+    electrolyzer = None
+    oxidation_chamber = None
+    atmospheric_concentrator = None
+    electric_heater = None
+    slag_heater = None
+    phase_heater = None
+    heat_redirector = None
+    small_heat_redirector = None
+    heat_router = None
+    slag_incinerator = None
+    carbide_crucible = None
+    slag_centrifuge = None
+    surge_crucible = None
+    cyanogen_synthesizer = None
+    phase_synthesizer = None
+    heat_reactor = None
     # sandbox
-    power_source:Block = None
-    power_void:Block = None
-    item_source:Block = None
-    item_void:Block = None
-    liquid_source:Block = None
-    liquid_void:Block = None
-    payload_source:Block = None
-    payload_void:Block = None
-    illuminator:Block = None
-    heat_source:Block = None
+    power_source = None
+    power_void = None
+    item_source = None
+    item_void = None
+    liquid_source = None
+    liquid_void = None
+    payload_source = None
+    payload_void = None
+    illuminator = None
+    heat_source = None
     # defense
-    copper_wall:Block = None
-    copper_wall_large:Block = None
-    titanium_wall:Block = None
-    titanium_wall_large:Block = None
-    plastanium_wall:Block = None
-    plastanium_wall_large:Block = None
-    thorium_wall:Block = None
-    thorium_wall_large:Block = None
-    door:Block = None
-    door_large:Block = None
-    phase_wall:Block = None
-    phase_wall_large:Block = None
-    surge_wall:Block = None
-    surge_wall_large:Block = None
+    copper_wall = None
+    copper_wall_large = None
+    titanium_wall = None
+    titanium_wall_large = None
+    plastanium_wall = None
+    plastanium_wall_large = None
+    thorium_wall = None
+    thorium_wall_large = None
+    door = None
+    door_large = None
+    phase_wall = None
+    phase_wall_large = None
+    surge_wall = None
+    surge_wall_large = None
     # walls - erekir
-    beryllium_wall:Block = None
-    beryllium_wall_large:Block = None
-    tungsten_wall:Block = None
-    tungsten_wall_large:Block = None
-    blast_door:Block = None
-    reinforced_surge_wall:Block = None
-    reinforced_surge_wall_large:Block = None
-    carbide_wall:Block = None
-    carbide_wall_large:Block = None
-    shielded_wall:Block = None
-    mender:Block = None
-    mend_projector:Block = None
-    overdrive_projector:Block = None
-    overdrive_dome:Block = None
-    force_projector:Block = None
-    shock_mine:Block = None
-    scrap_wall:Block = None
-    scrap_wall_large:Block = None
-    scrap_wall_huge:Block = None
-    scrap_wall_gigantic:Block = None
-    thruster:Block = None
+    beryllium_wall = None
+    beryllium_wall_large = None
+    tungsten_wall = None
+    tungsten_wall_large = None
+    blast_door = None
+    reinforced_surge_wall = None
+    reinforced_surge_wall_large = None
+    carbide_wall = None
+    carbide_wall_large = None
+    shielded_wall = None
+    mender = None
+    mend_projector = None
+    overdrive_projector = None
+    overdrive_dome = None
+    force_projector = None
+    shock_mine = None
+    scrap_wall = None
+    scrap_wall_large = None
+    scrap_wall_huge = None
+    scrap_wall_gigantic = None
+    thruster = None
     # defense - erekir
-    radar:Block = None
-    build_tower:Block = None
-    regen_projector:Block = None
-    barrier_projector:Block = None
-    shockwave_tower:Block = None
+    radar = None
+    build_tower = None
+    regen_projector = None
+    barrier_projector = None
+    shockwave_tower = None
     # campaign only
-    shield_projector:Block = None
-    large_shield_projector:Block = None
-    shield_breaker:Block = None
+    shield_projector = None
+    large_shield_projector = None
+    shield_breaker = None
     # transport
-    conveyor:Block = None
-    titanium_conveyor:Block = None
-    plastanium_conveyor:Block = None
-    armored_conveyor:Block = None
-    distributor:Block = None
-    junction:Block = None
-    item_bridge:Block = None
-    phase_conveyor:Block = None
-    sorter:Block = None
-    inverted_sorter:Block = None
-    router:Block = None
-    overflow_gate:Block = None
-    underflow_gate:Block = None
-    mass_driver:Block = None
+    conveyor = None
+    titanium_conveyor = None
+    plastanium_conveyor = None
+    armored_conveyor = None
+    distributor = None
+    junction = None
+    item_bridge = None
+    phase_conveyor = None
+    sorter = None
+    inverted_sorter = None
+    router = None
+    overflow_gate = None
+    underflow_gate = None
+    mass_driver = None
     # transport - alternate
-    duct:Block = None
-    armored_duct:Block = None
-    duct_router:Block = None
-    overflow_duct:Block = None
-    underflow_duct:Block = None
-    duct_bridge:Block = None
-    duct_unloader:Block = None
-    surge_conveyor:Block = None
-    surge_router:Block = None
-    unit_cargo_loader:Block = None
-    unit_cargo_unload_point:Block = None
+    duct = None
+    armored_duct = None
+    duct_router = None
+    overflow_duct = None
+    underflow_duct = None
+    duct_bridge = None
+    duct_unloader = None
+    surge_conveyor = None
+    surge_router = None
+    unit_cargo_loader = None
+    unit_cargo_unload_point = None
     # liquid
-    mechanical_pump:Block = None
-    rotary_pump:Block = None
-    impulse_pump:Block = None
-    conduit:Block = None
-    pulse_conduit:Block = None
-    plated_conduit:Block = None
-    liquid_router:Block = None
-    liquid_container:Block = None
-    liquid_tank:Block = None
-    liquid_junction:Block = None
-    bridge_conduit:Block = None
-    phase_conduit:Block = None
+    mechanical_pump = None
+    rotary_pump = None
+    impulse_pump = None
+    conduit = None
+    pulse_conduit = None
+    plated_conduit = None
+    liquid_router = None
+    liquid_container = None
+    liquid_tank = None
+    liquid_junction = None
+    bridge_conduit = None
+    phase_conduit = None
     # liquid - reinforced
-    reinforced_pump:Block = None
-    reinforced_conduit:Block = None
-    reinforced_liquid_junction:Block = None
-    reinforced_bridge_conduit:Block = None
-    reinforced_liquid_router:Block = None
-    reinforced_liquid_container:Block = None
-    reinforced_liquid_tank:Block = None
+    reinforced_pump = None
+    reinforced_conduit = None
+    reinforced_liquid_junction = None
+    reinforced_bridge_conduit = None
+    reinforced_liquid_router = None
+    reinforced_liquid_container = None
+    reinforced_liquid_tank = None
     # power
-    combustion_generator:Block = None
-    thermal_generator:Block = None
-    steam_generator:Block = None
-    differential_generator:Block = None
-    rtg_generator:Block = None
-    solar_panel:Block = None
-    large_solar_panel:Block = None
-    thorium_reactor:Block = None
-    impact_reactor:Block = None
-    battery:Block = None
-    battery_large:Block = None
-    power_node:Block = None
-    power_node_large:Block = None
-    surge_tower:Block = None
-    diode:Block = None
+    combustion_generator = None
+    thermal_generator = None
+    steam_generator = None
+    differential_generator = None
+    rtg_generator = None
+    solar_panel = None
+    large_solar_panel = None
+    thorium_reactor = None
+    impact_reactor = None
+    battery = None
+    battery_large = None
+    power_node = None
+    power_node_large = None
+    surge_tower = None
+    diode = None
     # power - erekir
-    turbine_condenser:Block = None
-    vent_condenser:Block = None
-    chemical_combustion_chamber:Block = None
-    pyrolysis_generator:Block = None
-    flux_reactor:Block = None
-    neoplasia_reactor:Block = None
-    beam_node:Block = None
-    beam_tower:Block = None
-    beam_link:Block = None
+    turbine_condenser = None
+    vent_condenser = None
+    chemical_combustion_chamber = None
+    pyrolysis_generator = None
+    flux_reactor = None
+    neoplasia_reactor = None
+    beam_node = None
+    beam_tower = None
+    beam_link = None
     # production
-    mechanical_drill:Block = None
-    pneumatic_drill:Block = None
-    laser_drill:Block = None
-    blast_drill:Block = None
-    water_extractor:Block = None
-    oil_extractor:Block = None
-    cultivator:Block = None
-    cliff_crusher:Block = None
-    large_cliff_crusher:Block = None
-    plasma_bore:Block = None
-    large_plasma_bore:Block = None
-    impact_drill:Block = None
-    eruption_drill:Block = None
+    mechanical_drill = None
+    pneumatic_drill = None
+    laser_drill = None
+    blast_drill = None
+    water_extractor = None
+    oil_extractor = None
+    cultivator = None
+    cliff_crusher = None
+    large_cliff_crusher = None
+    plasma_bore = None
+    large_plasma_bore = None
+    impact_drill = None
+    eruption_drill = None
     # storage
-    core_shard:Block = None
-    core_foundation:Block = None
-    core_nucleus:Block = None
-    vault:Block = None
-    container:Block = None
-    unloader:Block = None
+    core_shard = None
+    core_foundation = None
+    core_nucleus = None
+    vault = None
+    container = None
+    unloader = None
     # storage - erekir
-    core_bastion:Block = None
-    core_citadel:Block = None
-    core_acropolis:Block = None
-    reinforced_container:Block = None
-    reinforced_vault:Block = None
+    core_bastion = None
+    core_citadel = None
+    core_acropolis = None
+    reinforced_container = None
+    reinforced_vault = None
     # turrets
-    duo:Block = None
-    scatter:Block = None
-    scorch:Block = None
-    hail:Block = None
-    arc:Block = None
-    wave:Block = None
-    lancer:Block = None
-    swarmer:Block = None
-    salvo:Block = None
-    fuse:Block = None
-    ripple:Block = None
-    cyclone:Block = None
-    foreshadow:Block = None
-    spectre:Block = None
-    meltdown:Block = None
-    segment:Block = None
-    parallax:Block = None
-    tsunami:Block = None
+    duo = None
+    scatter = None
+    scorch = None
+    hail = None
+    arc = None
+    wave = None
+    lancer = None
+    swarmer = None
+    salvo = None
+    fuse = None
+    ripple = None
+    cyclone = None
+    foreshadow = None
+    spectre = None
+    meltdown = None
+    segment = None
+    parallax = None
+    tsunami = None
     # turrets - erekir
-    breach:Block = None
-    diffuse:Block = None
-    sublimate:Block = None
-    titan:Block = None
-    disperse:Block = None
-    afflict:Block = None
-    lustre:Block = None
-    scathe:Block = None
-    smite:Block = None
-    malign:Block = None
+    breach = None
+    diffuse = None
+    sublimate = None
+    titan = None
+    disperse = None
+    afflict = None
+    lustre = None
+    scathe = None
+    smite = None
+    malign = None
     # units
-    ground_factory:Block = None
-    air_factory:Block = None
-    naval_factory:Block = None
-    additive_reconstructor:Block = None
-    multiplicative_reconstructor:Block = None
-    exponential_reconstructor:Block = None
-    tetrative_reconstructor:Block = None
-    repair_point:Block = None
-    repair_turret:Block = None
+    ground_factory = None
+    air_factory = None
+    naval_factory = None
+    additive_reconstructor = None
+    multiplicative_reconstructor = None
+    exponential_reconstructor = None
+    tetrative_reconstructor = None
+    repair_point = None
+    repair_turret = None
     # units - erekir
-    tank_fabricator:Block = None
-    ship_fabricator:Block = None
-    mech_fabricator:Block = None
-    tank_refabricator:Block = None
-    ship_refabricator:Block = None
-    mech_refabricator:Block = None
-    prime_refabricator:Block = None
-    tank_assembler:Block = None
-    ship_assembler:Block = None
-    mech_assembler:Block = None
-    basic_assembler_module:Block = None
-    unit_repair_tower:Block = None
+    tank_fabricator = None
+    ship_fabricator = None
+    mech_fabricator = None
+    tank_refabricator = None
+    ship_refabricator = None
+    mech_refabricator = None
+    prime_refabricator = None
+    tank_assembler = None
+    ship_assembler = None
+    mech_assembler = None
+    basic_assembler_module = None
+    unit_repair_tower = None
     # payloads
-    payload_conveyor:Block = None
-    payload_router:Block = None
-    reinforced_payload_conveyor:Block = None
-    reinforced_payload_router:Block = None
-    payload_mass_driver:Block = None
-    large_payload_mass_driver:Block = None
-    small_deconstructor:Block = None
-    deconstructor:Block = None
-    constructor:Block = None
-    large_constructor:Block = None
-    payload_loader:Block = None
-    payload_unloader:Block = None
+    payload_conveyor = None
+    payload_router = None
+    reinforced_payload_conveyor = None
+    reinforced_payload_router = None
+    payload_mass_driver = None
+    large_payload_mass_driver = None
+    small_deconstructor = None
+    deconstructor = None
+    constructor = None
+    large_constructor = None
+    payload_loader = None
+    payload_unloader = None
     # logic
-    message:Block = None
-    switch_block:Block = None
-    micro_processor:Block = None
-    logic_processor:Block = None
-    hyper_processor:Block = None
-    large_logic_display:Block = None
-    logic_display:Block = None
-    memory_cell:Block = None
-    memory_bank:Block = None
-    canvas:Block = None
-    reinforced_message:Block = None
-    world_processor:Block = None
-    world_cell:Block = None
-    world_message:Block = None
-    world_switch:Block = None
+    message = None
+    switch_block = None
+    micro_processor = None
+    logic_processor = None
+    hyper_processor = None
+    large_logic_display = None
+    logic_display = None
+    memory_cell = None
+    memory_bank = None
+    canvas = None
+    reinforced_message = None
+    world_processor = None
+    world_cell = None
+    world_message = None
+    world_switch = None
     # campaign
-    launch_pad:Block = None
-    interplanetary_accelerator:Block = None
+    launch_pad = None
+    interplanetary_accelerator = None
     
     @staticmethod
     def load():
+        
+        # region environment
+        
         Blocks.air = AirBlock('air')
         Blocks.spawn = SpawnBlock('spawn')
         Blocks.removeWall = RemoveWall('remove-wall')
@@ -578,7 +584,7 @@ class Blocks:
         Blocks.hotrock.blendGroup = Blocks.basalt
         Blocks.hotrock.emitLight = True
         Blocks.hotrock.lightRadius = 30.0
-        Blocks.hotrock.lightColor = Color.orange.cpy().set_a(0.15)
+        Blocks.hotrock.lightColor = Colors.orange.cpy().set_a(0.15)
 
         Blocks.magmarock = Floor("magmarock")
         Blocks.magmarock.attributes.set(Attribute.heat, 0.75)
@@ -586,7 +592,7 @@ class Blocks:
         Blocks.magmarock.blendGroup = Blocks.basalt
         Blocks.magmarock.emitLight = True
         Blocks.magmarock.lightRadius = 50.0
-        Blocks.magmarock.lightColor = Color.orange.cpy().set_a(0.3)
+        Blocks.magmarock.lightColor = Colors.orange.cpy().set_a(0.3)
 
         Blocks.sand = Floor("sand-floor")
         Blocks.sand.itemDrop = Items.sand
@@ -686,5 +692,294 @@ class Blocks:
 
         Blocks.arkyicStone = Floor("arkyic-stone")
         Blocks.arkyicStone.variants = 3
+        
+        Blocks.rhyoliteVent = SteamVent("rhyolite-vent")
+        Blocks.rhyoliteVent.parent = Blocks.rhyolite
+        Blocks.rhyoliteVent.blendGroup = Blocks.rhyolite
+        Blocks.rhyoliteVent.attributes.set(Attribute.steam, 1.0)
+        
+        Blocks.carbonVent = SteamVent("carbon-vent")
+        Blocks.carbonVent.parent = Blocks.carbonStone
+        Blocks.carbonVent.blendGroup = Blocks.carbonStone
+        Blocks.carbonVent.attributes.set(Attribute.steam, 1.0)
+
+        Blocks.arkyicVent = SteamVent("arkyic-vent")
+        Blocks.arkyicVent.parent = Blocks.arkyicStone
+        Blocks.arkyicVent.blendGroup = Blocks.arkyicStone
+        Blocks.arkyicVent.attributes.set(Attribute.steam, 1.0)
+
+        Blocks.yellowStoneVent = SteamVent("yellow-stone-vent")
+        Blocks.yellowStoneVent.parent = Blocks.yellowStone
+        Blocks.yellowStoneVent.blendGroup = Blocks.yellowStone
+        Blocks.yellowStoneVent.attributes.set(Attribute.steam, 1.0)
+
+        Blocks.redStoneVent = SteamVent("red-stone-vent")
+        Blocks.redStoneVent.parent = Blocks.denseRedStone
+        Blocks.redStoneVent.blendGroup = Blocks.denseRedStone
+        Blocks.redStoneVent.attributes.set(Attribute.steam, 1.0)
+
+        Blocks.crystallineVent = SteamVent("crystalline-vent")
+        Blocks.crystallineVent.parent = Blocks.crystallineStone
+        Blocks.crystallineVent.blendGroup = Blocks.crystallineStone
+        Blocks.crystallineVent.attributes.set(Attribute.steam, 1.0)
+
+        Blocks.redmat = Floor("redmat")
+        Blocks.bluemat = Floor("bluemat")
+
+        Blocks.grass = Floor("grass")
+        # TODO grass needs a bush? classic had grass bushes.
+        Blocks.grass.attributes.set(Attribute.water, 0.1)
+        
+        Blocks.salt = Floor("salt")
+        Blocks.salt.variants = 0
+        Blocks.salt.attributes.set(Attribute.water, -0.3)
+        Blocks.salt.attributes.set(Attribute.oil, 0.3)
+
+        Blocks.snow = Floor("snow")
+        Blocks.snow.attributes.set(Attribute.water, 0.2)
+        Blocks.snow.albedo = 0.7
+
+        Blocks.ice = Floor("ice")
+        Blocks.ice.dragMultiplier = 0.35
+        Blocks.ice.speedMultiplier = 0.9
+        Blocks.ice.attributes.set(Attribute.water, 0.4)
+        Blocks.ice.albedo = 0.65
+
+        Blocks.iceSnow = Floor("ice-snow")
+        Blocks.iceSnow.dragMultiplier = 0.6
+        Blocks.iceSnow.variants = 3
+        Blocks.iceSnow.attributes.set(Attribute.water, 0.3)
+        Blocks.iceSnow.albedo = 0.6
+
+        Blocks.shale = Floor("shale")
+        Blocks.shale.variants = 3
+        Blocks.shale.attributes.set(Attribute.oil, 1.6)
+
+        Blocks.moss = Floor("moss")
+        Blocks.moss.variants = 3
+        Blocks.moss.attributes.set(Attribute.spores, 0.15)
+
+        Blocks.coreZone = Floor("core-zone")
+        Blocks.coreZone.variants = 0
+        Blocks.coreZone.allowCorePlacement = True
+
+        Blocks.sporeMoss = Floor("spore-moss")
+        Blocks.sporeMoss.variants = 3
+        Blocks.sporeMoss.attributes.set(Attribute.spores, 0.3)
+        
+        Blocks.stoneWall = StaticWall("stone-wall")
+        Blocks.stoneWall.attributes.set(Attribute.sand, 1.0)
+
+        Blocks.sporeWall = StaticWall("spore-wall")
+        Blocks.taintedWater.asFloor().wall = Blocks.deepTaintedWater.asFloor().wall = Blocks.sporeMoss.asFloor().wall = Blocks.sporeWall
+
+        Blocks.dirtWall = StaticWall("dirt-wall")
+
+        Blocks.daciteWall = StaticWall("dacite-wall")
+
+        Blocks.iceWall = StaticWall("ice-wall")
+        Blocks.iceSnow.asFloor().wall = Blocks.iceWall
+        Blocks.iceWall.albedo = 0.6
+
+        Blocks.snowWall = StaticWall("snow-wall")
+
+        Blocks.duneWall = StaticWall("dune-wall")
+        Blocks.hotrock.asFloor().wall = Blocks.magmarock.asFloor().wall = Blocks.basalt.asFloor().wall = Blocks.darksandWater.asFloor().wall = Blocks.darksandTaintedWater.asFloor().wall = Blocks.duneWall
+        Blocks.duneWall.attributes.set(Attribute.sand, 2.0)
+
+        Blocks.regolithWall = StaticWall("regolith-wall")
+        Blocks.regolith.asFloor().wall = Blocks.regolithWall
+        Blocks.regolithWall.attributes.set(Attribute.sand, 1.0)
+
+        Blocks.yellowStoneWall = StaticWall("yellow-stone-wall")
+        Blocks.yellowStone.asFloor().wall = Blocks.slag.asFloor().wall = Blocks.yellowStonePlates.asFloor().wall = Blocks.yellowStoneWall
+        Blocks.yellowStoneWall.attributes.set(Attribute.sand, 1.5)
+
+        Blocks.rhyoliteWall = StaticWall("rhyolite-wall")
+        Blocks.rhyolite.asFloor().wall = Blocks.rhyoliteCrater.asFloor().wall = Blocks.roughRhyolite.asFloor().wall = Blocks.rhyoliteWall
+        Blocks.rhyoliteWall.attributes.set(Attribute.sand, 1.0)
+
+        Blocks.carbonWall = StaticWall("carbon-wall")
+        Blocks.carbonStone.asFloor().wall = Blocks.carbonWall
+        Blocks.carbonWall.attributes.set(Attribute.sand, 0.7)
+
+        Blocks.ferricStoneWall = StaticWall("ferric-stone-wall")
+        Blocks.ferricStone.asFloor().wall = Blocks.ferricStoneWall
+        Blocks.ferricStoneWall.attributes.set(Attribute.sand, 0.5)
+
+        Blocks.beryllicStoneWall = StaticWall("beryllic-stone-wall")
+        Blocks.beryllicStone.asFloor().wall = Blocks.beryllicStoneWall
+        Blocks.beryllicStoneWall.attributes.set(Attribute.sand, 1.2)
+
+        Blocks.arkyicWall = StaticWall("arkyic-wall")
+        Blocks.arkyicWall.variants = 3
+        Blocks.arkyciteFloor.asFloor().wall = Blocks.arkyicStone.asFloor().wall = Blocks.arkyicWall
+
+        Blocks.crystallineStoneWall = StaticWall("crystalline-stone-wall")
+        Blocks.crystallineStoneWall.variants = 4
+        Blocks.crystallineStone.asFloor().wall = Blocks.crystalFloor.asFloor().wall = Blocks.crystallineStoneWall
+
+        Blocks.redIceWall = StaticWall("red-ice-wall")
+        Blocks.redIce.asFloor().wall = Blocks.redIceWall
+
+        Blocks.redStoneWall = StaticWall("red-stone-wall")
+        Blocks.redStone.asFloor().wall = Blocks.denseRedStone.asFloor().wall = Blocks.redStoneWall
+        Blocks.redStoneWall.attributes.set(Attribute.sand, 1.5)
+
+        Blocks.redDiamondWall = StaticTree("red-diamond-wall")
+        Blocks.redDiamondWall.variants = 3
+
+        Blocks.sandWall = StaticWall("sand-wall")
+        Blocks.sandWater.asFloor().wall = Blocks.water.asFloor().wall = Blocks.deepwater.asFloor().wall = Blocks.sand.asFloor().wall = Blocks.sandWall
+        Blocks.sandWall.attributes.set(Attribute.sand, 2.0)
+
+        Blocks.saltWall = StaticWall("salt-wall")
+
+        Blocks.shrubs = StaticWall("shrubs")
+
+        Blocks.shaleWall = StaticWall("shale-wall")
+        
+        Blocks.sporePine = StaticTree("spore-pine")
+        Blocks.moss.asFloor().wall = Blocks.sporePine
+
+        Blocks.snowPine = StaticTree("snow-pine")
+
+        Blocks.pine = StaticTree("pine")
+
+        Blocks.whiteTreeDead = TreeBlock("white-tree-dead")
+
+        Blocks.whiteTree = TreeBlock("white-tree")
+
+        Blocks.sporeCluster = Prop("spore-cluster")
+        Blocks.sporeCluster.variants = 3
+
+        Blocks.redweed = Seaweed("redweed")
+        Blocks.redweed.variants = 3
+        Blocks.redmat.asFloor().decoration = Blocks.redweed
+
+        Blocks.purbush = SeaBush("pur-bush")
+        Blocks.bluemat.asFloor().decoration = Blocks.purbush
+
+        Blocks.yellowCoral = SeaBush("yellowcoral")
+        Blocks.yellowCoral.lobesMin = 2
+        Blocks.yellowCoral.lobesMax = 3
+        Blocks.yellowCoral.magMax = 8.0
+        Blocks.yellowCoral.magMin = 2.0
+        Blocks.yellowCoral.origin = 0.3
+        Blocks.yellowCoral.spread = 40.0
+        Blocks.yellowCoral.sclMin = 60.0
+        Blocks.yellowCoral.sclMax = 100.0
+
+        Blocks.boulder = Prop("boulder")
+        Blocks.boulder.variants = 2
+        Blocks.stone.asFloor().decoration = Blocks.craters.asFloor().decoration = Blocks.charr.asFloor().decoration = Blocks.boulder
+
+        Blocks.snowBoulder = Prop("snow-boulder")
+        Blocks.snowBoulder.variants = 2
+        Blocks.snow.asFloor().decoration = Blocks.ice.asFloor().decoration = Blocks.iceSnow.asFloor().decoration = Blocks.salt.asFloor().decoration = Blocks.snowBoulder
+
+        Blocks.shaleBoulder = Prop("shale-boulder")
+        Blocks.shaleBoulder.variants = 2
+        Blocks.shale.asFloor().decoration = Blocks.shaleBoulder
+
+        Blocks.sandBoulder = Prop("sand-boulder")
+        Blocks.sandBoulder.variants = 2
+        Blocks.sand.asFloor().decoration = Blocks.sandBoulder
+
+        Blocks.daciteBoulder = Prop("dacite-boulder")
+        Blocks.daciteBoulder.variants = 2
+        Blocks.dacite.asFloor().decoration = Blocks.daciteBoulder
+
+        Blocks.basaltBoulder = Prop("basalt-boulder")
+        Blocks.basaltBoulder.variants = 2
+        Blocks.basalt.asFloor().decoration = Blocks.hotrock.asFloor().decoration = Blocks.darksand.asFloor().decoration = Blocks.magmarock.asFloor().decoration = Blocks.basaltBoulder
+
+        Blocks.carbonBoulder = Prop("carbon-boulder")
+        Blocks.carbonBoulder.variants = 2
+        Blocks.carbonStone.asFloor().decoration = Blocks.carbonBoulder
+
+        Blocks.ferricBoulder = Prop("ferric-boulder")
+        Blocks.ferricBoulder.variants = 2
+        Blocks.ferricStone.asFloor().decoration = Blocks.ferricCraters.asFloor().decoration = Blocks.ferricBoulder
+
+        Blocks.beryllicBoulder = Prop("beryllic-boulder")
+        Blocks.beryllicBoulder.variants = 2
+        Blocks.beryllicStone.asFloor().decoration = Blocks.beryllicBoulder
+
+        Blocks.yellowStoneBoulder = Prop("yellow-stone-boulder")
+        Blocks.yellowStoneBoulder.variants = 2
+        Blocks.yellowStone.asFloor().decoration = Blocks.regolith.asFloor().decoration = Blocks.yellowStonePlates.asFloor().decoration = Blocks.yellowStoneBoulder
+
+        Blocks.arkyicBoulder = Prop("arkyic-boulder")
+        Blocks.arkyicBoulder.variants = 3
+        Blocks.arkyicBoulder.customShadow = True
+        Blocks.arkyicStone.asFloor().decoration = Blocks.arkyicBoulder
+        
+        Blocks.crystalCluster = TallBlock("crystal-cluster")
+        Blocks.crystalCluster.variants = 3
+        Blocks.crystalCluster.clipSize = 128.0
+
+        Blocks.vibrantCrystalCluster = TallBlock("vibrant-crystal-cluster")
+        Blocks.vibrantCrystalCluster.variants = 3
+        Blocks.vibrantCrystalCluster.clipSize = 128.0
+
+        Blocks.crystalBlocks = TallBlock("crystal-blocks")
+        Blocks.crystalBlocks.variants = 3
+        Blocks.crystalBlocks.clipSize = 128.0
+        Blocks.crystalBlocks.shadowAlpha = 0.5
+        Blocks.crystalBlocks.shadowOffset = -2.5
+
+        Blocks.crystalOrbs = TallBlock("crystal-orbs")
+        Blocks.crystalOrbs.variants = 3
+        Blocks.crystalOrbs.clipSize = 128.0
+        Blocks.crystalOrbs.shadowAlpha = 0.5
+        Blocks.crystalOrbs.shadowOffset = -2.5
+
+        Blocks.crystallineBoulder = Prop("crystalline-boulder")
+        Blocks.crystallineBoulder.variants = 2
+        Blocks.crystallineStone.asFloor().decoration = Blocks.crystallineBoulder
+
+        Blocks.redIceBoulder = Prop("red-ice-boulder")
+        Blocks.redIceBoulder.variants = 3
+        Blocks.redIce.asFloor().decoration = Blocks.redIceBoulder
+
+        Blocks.rhyoliteBoulder = Prop("rhyolite-boulder")
+        Blocks.rhyoliteBoulder.variants = 3
+        Blocks.rhyolite.asFloor().decoration = Blocks.roughRhyolite.asFloor().decoration = Blocks.rhyoliteBoulder
+
+        Blocks.redStoneBoulder = Prop("red-stone-boulder")
+        Blocks.redStoneBoulder.variants = 4
+        Blocks.denseRedStone.asFloor().decoration = Blocks.redStone.asFloor().decoration = Blocks.redStoneBoulder
+
+        Blocks.metalFloor = Floor("metal-floor", 0)
+        Blocks.metalFloorDamaged = Floor("metal-floor-damaged", 3)
+
+        Blocks.metalFloor2 = Floor("metal-floor-2", 0)
+        Blocks.metalFloor3 = Floor("metal-floor-3", 0)
+        Blocks.metalFloor4 = Floor("metal-floor-4", 0)
+        Blocks.metalFloor5 = Floor("metal-floor-5", 0)
+
+        Blocks.darkPanel1 = Floor("dark-panel-1", 0)
+        Blocks.darkPanel2 = Floor("dark-panel-2", 0)
+        Blocks.darkPanel3 = Floor("dark-panel-3", 0)
+        Blocks.darkPanel4 = Floor("dark-panel-4", 0)
+        Blocks.darkPanel5 = Floor("dark-panel-5", 0)
+        Blocks.darkPanel6 = Floor("dark-panel-6", 0)
+
+        Blocks.darkMetal = StaticWall("dark-metal")
+        
+        blocks = [
+            Blocks.metal_floor, Blocks.metal_floor_damaged, Blocks.metal_floor2, Blocks.metal_floor3,
+            Blocks.metal_floor4, Blocks.metal_floor5, Blocks.dark_panel1, Blocks.dark_panel2,
+            Blocks.dark_panel3, Blocks.dark_panel4, Blocks.dark_panel5, Blocks.dark_panel6
+        ]
+
+        for b in blocks:
+            b.as_floor().wall = Blocks.dark_metal
+        
+        pebbles = OverlayFloor('pebbles')
+        tendrils = OverlayFloor('tendrils')
+        
+        # region ore
         
         

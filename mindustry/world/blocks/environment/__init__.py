@@ -2,8 +2,16 @@ from .air_block import *
 from .cliff import *
 from .empty_floor import *
 from .floor import *
+from .prop import *
 from .overlay_floor import *
 from .remove_ore import *
 from .remove_wall import *
+from .sea_bush import *
+from .seaweed import *
 from .shallow_liquid import *
 from .spawn_block import *
+from .static_tree import *
+from .static_wall import *
+from .steam_vent import *
+from .tree_block import *
+from .tall_block import *

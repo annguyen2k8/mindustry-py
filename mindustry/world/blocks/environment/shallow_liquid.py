@@ -1,4 +1,5 @@
-from ...block import Block
+from mindustry.world.block import Block
+
 from .floor import Floor
 
 class ShallowLiquid(Floor):
