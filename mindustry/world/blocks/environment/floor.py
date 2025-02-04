@@ -1,9 +1,9 @@
 from __future__ import annotations
 from typing import *
 
-from ....content.blocks import *
-from ....type import *
+from mindustry.type import *
 
+from mindustry.content import Blocks
 from ...block import Block
 
 class Floor(Block):
@@ -24,8 +24,6 @@ class Floor(Block):
     oreDefault:bool = False
     oreScale:float = 24.0
     oreThreshold:float = 0.828
-    wall:Block = Blocks.air
-    decoration:Block = Blocks.air
     canShadow:bool = True
     needsSurface:bool = True
     allowCorePlacement:bool = False
@@ -33,6 +31,7 @@ class Floor(Block):
     blendId:int = -1
     
     def __init__(self, name, variants:int=3):
+        from mindustry.content.blocks import Blocks
         super().__init__(name)
         self.blendGroup = self
         self.variants = variants
@@ -40,3 +39,5 @@ class Floor(Block):
         self.allowRectanglePlacement = True
         self.instantBuild = True
         self.ignoreBuildDarkness = True
+        self.wall = Blocks.air
+        self.decoration = Blocks.air

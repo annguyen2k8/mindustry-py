@@ -21,7 +21,7 @@ class Pal:
 
     spore = Color.valueOf("7457ce")
 
-    shield = Color.valueOf("ffd37f").set_a(0.7)
+    shield = Color.valueOf("ffd37f").cpy().set_a(0.7)
 
     bullet_yellow = Color.valueOf("fff8e8")
     bullet_yellow_back = Color.valueOf("f9c27a")

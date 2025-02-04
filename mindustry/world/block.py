@@ -1,8 +1,10 @@
 from typing import *
 
-from ..graphics import *
-from ..type import *
-from .meta import *
+from mindustry.world.meta import *
+from mindustry.graphics import *
+from mindustry.type import *
+
+from .blocks.attributes import Attributes
 
 class Block:
     name: str
@@ -126,7 +128,7 @@ class Block:
     # if true, this block cannot be mined by players. useful for annoying things like sand.
     playerUnmineable: bool = False
     # Array of affinities to certain things.
-    attributes: set[Attribute] = set()
+    attributes: Attributes = Attributes()
     # Health per square tile that this block occupies; essentially, this is multiplied by size * size. Overridden if health is > 0. If <0, the default is 40.
     scaledHealth: float = -1
     # building health; -1 to use scaledHealth

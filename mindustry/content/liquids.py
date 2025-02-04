@@ -13,7 +13,7 @@ class Liquids:
     slag.temperature = 1.0
     slag.viscosity = 0.7
     slag.effect = StatusEffects.melting
-    slag.lightColor = Color.valueOf('f0511d').set_a(0.4)
+    slag.lightColor = Color.valueOf('f0511d').cpy().set_a(0.4)
     
     oil = Liquid('oil', Color.valueOf('313131'))
     oil.viscosity = 0.75
@@ -30,7 +30,7 @@ class Liquids:
     cryofluid.heatCapacity = 0.9
     cryofluid.temperature = 0.25
     cryofluid.effect = StatusEffects.freezing
-    cryofluid.lightColor = Color.valueOf('0097f5').set_a(0.2)
+    cryofluid.lightColor = Color.valueOf('0097f5').cpy().set_a(0.2)
     cryofluid.boilPoint = 0.55
     cryofluid.gasColor = Color.valueOf('c1e8f5')
     

@@ -1,4 +1,4 @@
-from .floor import *
+from .floor import Floor
 
 class AirBlock(Floor):
     def __init__(self, name):

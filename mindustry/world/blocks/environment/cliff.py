@@ -1,4 +1,4 @@
-from . import *
+from ...block import Block
 
 class Cliff(Block):
     def __init__(self, name):

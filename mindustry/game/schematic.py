@@ -1,8 +1,9 @@
 from __future__ import annotations
+
 from typing import *
 
-from .content import *
-from .world import *
+from ..content import *
+from ..world import *
 
 class Schematic:
     tiles:List[Stile]

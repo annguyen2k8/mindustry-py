@@ -49,6 +49,10 @@ class Color:
         self.g *= value
         self.a *= value
         return self
+    
+    def cpy(self) -> Color:
+        import copy
+        return copy.copy(self)
 
 class Colors:
     white = Color(1, 1, 1, 1)

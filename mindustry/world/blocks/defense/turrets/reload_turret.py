@@ -1,4 +1,4 @@
-from . import *
+from .base_turret import BaseTurret
 
 class ReloadTurret(BaseTurret):
     reloadAmor: float = 10.0

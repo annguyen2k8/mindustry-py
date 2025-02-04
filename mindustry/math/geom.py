@@ -15,6 +15,11 @@ class Point2():
     @staticmethod
     def unpack(pos:int) -> Point2:
         return Point2(int(pos >> 16), int(pos & 0xFFFF))
+    
+    def sub(self, x:int, y:int) -> Point2:
+        self.x -= x
+        self.y -= y
+        return self
 
 class Vec2:
     x:float

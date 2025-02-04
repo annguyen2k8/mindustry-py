@@ -1,4 +1,4 @@
-from . import *
+from . import Floor
 
 class OverlayFloor(Floor):
     def __init__(self, name):

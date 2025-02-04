@@ -1,4 +1,4 @@
-from ...block import *
+from ...block import Block
 
 class RemoveWall(Block):
     def __init__(self, name):

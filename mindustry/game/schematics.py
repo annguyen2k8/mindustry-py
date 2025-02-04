@@ -1,12 +1,11 @@
 import io
 import base64
 
-from .io import *
+from ..io import *
 
-from .math import *
-
-from .schematic import *
-from .content import *
+from ..math import *
+from ..game.schematic import *
+from ..content import *
 
 class Schematics:
     @staticmethod
