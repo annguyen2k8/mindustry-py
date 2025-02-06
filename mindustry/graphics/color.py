@@ -53,6 +53,13 @@ class Color:
     def cpy(self) -> Color:
         import copy
         return copy.copy(self)
+    
+    def set(self, color:Color) -> Color:
+        self.r = color.r
+        self.g = color.g
+        self.b = color.b
+        self.a = color.a
+        return self
 
 class Colors:
     white = Color(1, 1, 1, 1)
