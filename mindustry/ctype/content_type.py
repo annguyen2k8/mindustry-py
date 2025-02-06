@@ -1,5 +1,5 @@
-from ..type import *
-from ..world import *
+from mindustry.type import *
+from mindustry.world.block import Block
 
 class ContentType:
     item = Item.__class__

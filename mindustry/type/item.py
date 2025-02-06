@@ -1,7 +1,8 @@
-from ..graphics import *
+from mindustry.graphics import *
 
-class Item:
-    name:str
+from mindustry.ctype.unlockable_content import UnblockableContent
+
+class Item(UnblockableContent):
     color:Color
     
     explosiveness:float = 0.0
@@ -22,6 +23,6 @@ class Item:
     hidden:bool = False
     # public @Nullable Planet[] hiddenOnPlanets
     
-    def __init__(self, name:str, color:Color=Colors.black) -> None:
-        self.name = name
+    def __init__(self, name, color:Color=Colors.black) -> None:
+        super().__init__(name)
         self.color = color
