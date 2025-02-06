@@ -969,17 +969,68 @@ class Blocks:
         Blocks.darkMetal = StaticWall("dark-metal")
         
         blocks = [
-            Blocks.metal_floor, Blocks.metal_floor_damaged, Blocks.metal_floor2, Blocks.metal_floor3,
-            Blocks.metal_floor4, Blocks.metal_floor5, Blocks.dark_panel1, Blocks.dark_panel2,
-            Blocks.dark_panel3, Blocks.dark_panel4, Blocks.dark_panel5, Blocks.dark_panel6
+            Blocks.metalFloor, Blocks.metalFloorDamaged, Blocks.metalFloor2, Blocks.metalFloor3,
+            Blocks.metalFloor4, Blocks.metalFloor5, Blocks.darkPanel1, Blocks.darkPanel2,
+            Blocks.darkPanel3, Blocks.darkPanel4, Blocks.darkPanel5, Blocks.darkPanel6
         ]
 
         for b in blocks:
-            b.as_floor().wall = Blocks.dark_metal
+            b.wall = Blocks.dark_metal
         
-        pebbles = OverlayFloor('pebbles')
-        tendrils = OverlayFloor('tendrils')
+        Blocks.pebbles = OverlayFloor('pebbles')
+        Blocks.tendrils = OverlayFloor('tendrils')
         
         # region ore
         
+        Blocks.oreCopper = OreBlock(Items.copper)
+        Blocks.oreCopper.oreDefault = True
+        Blocks.oreCopper.oreThreshold = 0.81
+        Blocks.oreCopper.oreScale = 23.47619
+
+        Blocks.oreLead = OreBlock(Items.lead)
+        Blocks.oreLead.oreDefault = True
+        Blocks.oreLead.oreThreshold = 0.828
+        Blocks.oreLead.oreScale = 23.952381
+
+        Blocks.oreScrap = OreBlock(Items.scrap)
+
+        Blocks.oreCoal = OreBlock(Items.coal)
+        Blocks.oreCoal.oreDefault = True
+        Blocks.oreCoal.oreThreshold = 0.846
+        Blocks.oreCoal.oreScale = 24.428572
+
+        Blocks.oreTitanium = OreBlock(Items.titanium)
+        Blocks.oreTitanium.oreDefault = True
+        Blocks.oreTitanium.oreThreshold = 0.864
+        Blocks.oreTitanium.oreScale = 24.904762
+
+        Blocks.oreThorium = OreBlock(Items.thorium)
+        Blocks.oreThorium.oreDefault = True
+        Blocks.oreThorium.oreThreshold = 0.882
+        Blocks.oreThorium.oreScale = 25.380953
+
+        Blocks.oreBeryllium = OreBlock(Items.beryllium)
+
+        Blocks.oreTungsten = OreBlock(Items.tungsten)
+
+        Blocks.oreCrystalThorium = OreBlock("ore-crystal-thorium", Items.thorium)
+
+        Blocks.wallOreThorium = OreBlock("ore-wall-thorium", Items.thorium)
+        Blocks.wallOreThorium.wallOre = True
+
+        Blocks.wallOreBeryllium = OreBlock("ore-wall-beryllium", Items.beryllium)
+        Blocks.wallOreBeryllium.wallOre = True
+
+        Blocks.graphiticWall = StaticWall("graphitic-wall")
+        Blocks.graphiticWall.itemDrop = Items.graphite
+        Blocks.graphiticWall.variants = 3
+
+        # TODO merge with standard ore?
+        Blocks.wallOreTungsten = OreBlock("ore-wall-tungsten", Items.tungsten)
+        Blocks.wallOreTungsten.wallOre = True
+        
+        # region crafting
+        
+        Blocks.graphitePress = GenericCrafter("graphite-press")
+        Blocks.graphitePress.set_requirements(Category.crafting, ItemStack.with_item(Items.titanium, 100, Items.silicon, 25, Items.lead, 100, Items.graphite, 50))
         
