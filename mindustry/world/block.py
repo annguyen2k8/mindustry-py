@@ -4,10 +4,11 @@ from mindustry.world.meta import *
 from mindustry.graphics import *
 from mindustry.type import *
 
+from mindustry.ctype.unlockable_content import UnblockableContent
 from .blocks.attributes import Attributes
 # from .blocks.environment.floor import Floor
 
-class Block:
+class Block(UnblockableContent):
     name:str
     # If true, buildings have an ItemModule
     hasItems:bool
@@ -341,8 +342,18 @@ class Block:
     # How often to try dumping items in ticks, e.g. 5 = 12 times/sec
     dumpTime:int = 5
 
-    def __init__(self, name:str):
-        self.name = name
+    def __init__(self, name):
+        super().__init__(name)
+        self.initBuilding()
+        self.selectionSize = 28.0
+    
+    def initBuilding(self):
+        ...
     
     def asFloor(self):
         return self
+    
+    def set_requirements(self, cat:Category, stacks:List[ItemStack]):
+        self.category = cat
+        self.requirements = stacks
+        # self.requirements.sort(key=lambda x: x.item.id)

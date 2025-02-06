@@ -2,6 +2,7 @@ from .air_block import *
 from .cliff import *
 from .empty_floor import *
 from .floor import *
+from .ore_block import *
 from .prop import *
 from .overlay_floor import *
 from .remove_ore import *
