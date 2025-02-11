@@ -1,5 +1,7 @@
+from multipledispatch import dispatch
 from typing import *
 
+from mindustry.world.consumer import *
 from mindustry.world.meta import *
 from mindustry.graphics import *
 from mindustry.type import *
@@ -324,7 +326,7 @@ class Block(UnblockableContent):
     # Map of bars by name.
     # barMap:OrderedMap[str, Func[Building, Bar]] = OrderedMap()
     # List for building up consumption before init().
-    # consumeBuilder:Seq[Consume] = Seq()
+    consumeBuilder:set[Consume] = set()
     # Regions indexes from icons() that are rotated. If either of these is not -1, other regions won't be rotated in ConstructBlocks.
     # regionRotated1:int = -1
     # regionRotated2:int = -1
@@ -353,7 +355,30 @@ class Block(UnblockableContent):
     def asFloor(self):
         return self
     
-    def set_requirements(self, cat:Category, stacks:List[ItemStack]):
+    def setRequirements(self, cat:Category, stacks:List[ItemStack]):
         self.category = cat
         self.requirements = stacks
         # self.requirements.sort(key=lambda x: x.item.id)
+    
+    def consumeLiquid(self, liquid:Liquid, amount:float) -> ConsumeLiquid:
+        return self.consume(ConsumeLiquid(liquid, amount))
+    
+    def consumeLiquids(self, *liquids:List[LiquidStack]) -> ConsumeLiquids:
+        return self.consume(ConsumeLiquids(liquids))
+    
+    def consumePower(self, powerPerTick:float) -> ConsumePower:
+        return self.consume(ConsumePower(powerPerTick))
+    
+    def consumeItem(self, item:Item, amount:int=1) -> ConsumeItems:
+        return self.consume(ConsumeItems([ItemStack(item, amount),]))
+    
+    def consumeItems(self, *items:List[Item]) -> ConsumeItems:
+        return self.consume(ConsumeItems(items))
+    
+    def consume(self, consume:Consume) -> Consume:
+        if isinstance(consume, ConsumePower):
+            for b in self.consumeBuilder:
+                if isinstance(b, ConsumePower):
+                    self.consumeBuilder.remove(b)
+        self.consumeBuilder.add(consume)
+        return consume
