@@ -1,3 +1,4 @@
+from mindustry.world.consumer import *
 from mindustry.world.blocks import *
 from mindustry.world.meta import *
 from mindustry.graphics import *
@@ -7,437 +8,410 @@ from mindustry.vars import *
 # from mindustry.world.block import Block
 
 class Blocks:
-    # environment
-    air = None
-    spawn = None
-    remove_wall = None
-    remove_ore = None
-    cliff = None
-    deepwater = None
-    water = None
-    tainted_water = None
-    deep_tainted_water = None
-    tar = None
-    slag = None
-    cryofluid = None
-    stone = None
-    craters = None
-    charr = None
-    sand = None
-    darksand = None
-    dirt = None
-    mud = None
-    ice = None
-    snow = None
-    darksand_tainted_water = None
-    space = None
-    empty = None
-    dacite = None
-    rhyolite = None
-    rhyolite_crater = None
-    rough_rhyolite = None
-    regolith = None
-    yellow_stone = None
-    red_ice = None
-    red_stone = None
-    dense_red_stone = None
-    arkycite_floor = None
-    arkyic_stone = None
-    redmat = None
-    bluemat = None
-    stone_wall = None
-    dirt_wall = None
-    spore_wall = None
-    ice_wall = None
-    dacite_wall = None
-    spore_pine = None
-    snow_pine = None
-    pine = None
-    shrubs = None
-    white_tree = None
-    white_tree_dead = None
-    spore_cluster = None
-    redweed = None
-    purbush = None
-    yellow_coral = None
-    rhyolite_vent = None
-    carbon_vent = None
-    arkyic_vent = None
-    yellow_stone_vent = None
-    red_stone_vent = None
-    crystalline_vent = None
-    regolith_wall = None
-    yellow_stone_wall = None
-    rhyolite_wall = None
-    carbon_wall = None
-    red_ice_wall = None
-    ferric_stone_wall = None
-    beryllic_stone_wall = None
-    arkyic_wall = None
-    crystalline_stone_wall = None
-    red_stone_wall = None
-    red_diamond_wall = None
-    ferric_stone = None
-    ferric_craters = None
-    carbon_stone = None
-    beryllic_stone = None
-    crystalline_stone = None
-    crystal_floor = None
-    yellow_stone_plates = None
-    ice_snow = None
-    sand_water = None
-    darksand_water = None
-    dune_wall = None
-    sand_wall = None
-    moss = None
-    spore_moss = None
-    shale = None
-    shale_wall = None
-    grass = None
-    salt = None
-    core_zone = None
-    # boulders
-    shale_boulder = None
-    sand_boulder = None
-    dacite_boulder = None
-    boulder = None
-    snow_boulder = None
-    basalt_boulder = None
-    carbon_boulder = None
-    ferric_boulder = None
-    beryllic_boulder = None
-    yellow_stone_boulder = None
-    arkyic_boulder = None
-    crystal_cluster = None
-    vibrant_crystal_cluster = None
-    crystal_blocks = None
-    crystal_orbs = None
-    crystalline_boulder = None
-    red_ice_boulder = None
-    rhyolite_boulder = None
-    red_stone_boulder = None
-    metal_floor = None
-    metal_floor_damaged = None
-    metal_floor2 = None
-    metal_floor3 = None
-    metal_floor4 = None
-    metal_floor5 = None
-    basalt = None
-    magmarock = None
-    hotrock = None
-    snow_wall = None
-    salt_wall = None
-    dark_panel1 = None
-    dark_panel2 = None
-    dark_panel3 = None
-    dark_panel4 = None
-    dark_panel5 = None
-    dark_panel6 = None
-    dark_metal = None
-    pebbles = None
-    tendrils = None
-    # ores
-    ore_copper = None
-    ore_lead = None
-    ore_scrap = None
-    ore_coal = None
-    ore_titanium = None
-    ore_thorium = None
-    ore_beryllium = None
-    ore_tungsten = None
-    ore_crystal_thorium = None
-    wall_ore_thorium = None
-    # wall ores
-    wall_ore_beryllium = None
-    graphitic_wall = None
-    wall_ore_tungsten = None
-    # crafting
-    silicon_smelter = None
-    silicon_crucible = None
-    kiln = None
-    graphite_press = None
-    plastanium_compressor = None
-    multi_press = None
-    phase_weaver = None
-    surge_smelter = None
-    pyratite_mixer = None
-    blast_mixer = None
-    cryofluid_mixer = None
-    melter = None
-    separator = None
-    disassembler = None
-    spore_press = None
-    pulverizer = None
-    incinerator = None
-    coal_centrifuge = None
-    # crafting - erekir
-    silicon_arc_furnace = None
-    electrolyzer = None
-    oxidation_chamber = None
-    atmospheric_concentrator = None
-    electric_heater = None
-    slag_heater = None
-    phase_heater = None
-    heat_redirector = None
-    small_heat_redirector = None
-    heat_router = None
-    slag_incinerator = None
-    carbide_crucible = None
-    slag_centrifuge = None
-    surge_crucible = None
-    cyanogen_synthesizer = None
-    phase_synthesizer = None
-    heat_reactor = None
-    # sandbox
-    power_source = None
-    power_void = None
-    item_source = None
-    item_void = None
-    liquid_source = None
-    liquid_void = None
-    payload_source = None
-    payload_void = None
-    illuminator = None
-    heat_source = None
-    # defense
-    copper_wall = None
-    copper_wall_large = None
-    titanium_wall = None
-    titanium_wall_large = None
-    plastanium_wall = None
-    plastanium_wall_large = None
-    thorium_wall = None
-    thorium_wall_large = None
-    door = None
-    door_large = None
-    phase_wall = None
-    phase_wall_large = None
-    surge_wall = None
-    surge_wall_large = None
-    # walls - erekir
-    beryllium_wall = None
-    beryllium_wall_large = None
-    tungsten_wall = None
-    tungsten_wall_large = None
-    blast_door = None
-    reinforced_surge_wall = None
-    reinforced_surge_wall_large = None
-    carbide_wall = None
-    carbide_wall_large = None
-    shielded_wall = None
-    mender = None
-    mend_projector = None
-    overdrive_projector = None
-    overdrive_dome = None
-    force_projector = None
-    shock_mine = None
-    scrap_wall = None
-    scrap_wall_large = None
-    scrap_wall_huge = None
-    scrap_wall_gigantic = None
-    thruster = None
-    # defense - erekir
-    radar = None
-    build_tower = None
-    regen_projector = None
-    barrier_projector = None
-    shockwave_tower = None
-    # campaign only
-    shield_projector = None
-    large_shield_projector = None
-    shield_breaker = None
-    # transport
-    conveyor = None
-    titanium_conveyor = None
-    plastanium_conveyor = None
-    armored_conveyor = None
-    distributor = None
-    junction = None
-    item_bridge = None
-    phase_conveyor = None
-    sorter = None
-    inverted_sorter = None
-    router = None
-    overflow_gate = None
-    underflow_gate = None
-    mass_driver = None
-    # transport - alternate
-    duct = None
-    armored_duct = None
-    duct_router = None
-    overflow_duct = None
-    underflow_duct = None
-    duct_bridge = None
-    duct_unloader = None
-    surge_conveyor = None
-    surge_router = None
-    unit_cargo_loader = None
-    unit_cargo_unload_point = None
-    # liquid
-    mechanical_pump = None
-    rotary_pump = None
-    impulse_pump = None
-    conduit = None
-    pulse_conduit = None
-    plated_conduit = None
-    liquid_router = None
-    liquid_container = None
-    liquid_tank = None
-    liquid_junction = None
-    bridge_conduit = None
-    phase_conduit = None
-    # liquid - reinforced
-    reinforced_pump = None
-    reinforced_conduit = None
-    reinforced_liquid_junction = None
-    reinforced_bridge_conduit = None
-    reinforced_liquid_router = None
-    reinforced_liquid_container = None
-    reinforced_liquid_tank = None
-    # power
-    combustion_generator = None
-    thermal_generator = None
-    steam_generator = None
-    differential_generator = None
-    rtg_generator = None
-    solar_panel = None
-    large_solar_panel = None
-    thorium_reactor = None
-    impact_reactor = None
-    battery = None
-    battery_large = None
-    power_node = None
-    power_node_large = None
-    surge_tower = None
-    diode = None
-    # power - erekir
-    turbine_condenser = None
-    vent_condenser = None
-    chemical_combustion_chamber = None
-    pyrolysis_generator = None
-    flux_reactor = None
-    neoplasia_reactor = None
-    beam_node = None
-    beam_tower = None
-    beam_link = None
-    # production
-    mechanical_drill = None
-    pneumatic_drill = None
-    laser_drill = None
-    blast_drill = None
-    water_extractor = None
-    oil_extractor = None
-    cultivator = None
-    cliff_crusher = None
-    large_cliff_crusher = None
-    plasma_bore = None
-    large_plasma_bore = None
-    impact_drill = None
-    eruption_drill = None
-    # storage
-    core_shard = None
-    core_foundation = None
-    core_nucleus = None
-    vault = None
-    container = None
-    unloader = None
-    # storage - erekir
-    core_bastion = None
-    core_citadel = None
-    core_acropolis = None
-    reinforced_container = None
-    reinforced_vault = None
-    # turrets
-    duo = None
-    scatter = None
-    scorch = None
-    hail = None
-    arc = None
-    wave = None
-    lancer = None
-    swarmer = None
-    salvo = None
-    fuse = None
-    ripple = None
-    cyclone = None
-    foreshadow = None
-    spectre = None
-    meltdown = None
-    segment = None
-    parallax = None
-    tsunami = None
-    # turrets - erekir
-    breach = None
-    diffuse = None
-    sublimate = None
-    titan = None
-    disperse = None
-    afflict = None
-    lustre = None
-    scathe = None
-    smite = None
-    malign = None
-    # units
-    ground_factory = None
-    air_factory = None
-    naval_factory = None
-    additive_reconstructor = None
-    multiplicative_reconstructor = None
-    exponential_reconstructor = None
-    tetrative_reconstructor = None
-    repair_point = None
-    repair_turret = None
-    # units - erekir
-    tank_fabricator = None
-    ship_fabricator = None
-    mech_fabricator = None
-    tank_refabricator = None
-    ship_refabricator = None
-    mech_refabricator = None
-    prime_refabricator = None
-    tank_assembler = None
-    ship_assembler = None
-    mech_assembler = None
-    basic_assembler_module = None
-    unit_repair_tower = None
-    # payloads
-    payload_conveyor = None
-    payload_router = None
-    reinforced_payload_conveyor = None
-    reinforced_payload_router = None
-    payload_mass_driver = None
-    large_payload_mass_driver = None
-    small_deconstructor = None
-    deconstructor = None
-    constructor = None
-    large_constructor = None
-    payload_loader = None
-    payload_unloader = None
-    # logic
-    message = None
-    switch_block = None
-    micro_processor = None
-    logic_processor = None
-    hyper_processor = None
-    large_logic_display = None
-    logic_display = None
-    memory_cell = None
-    memory_bank = None
-    canvas = None
-    reinforced_message = None
-    world_processor = None
-    world_cell = None
-    world_message = None
-    world_switch = None
-    # campaign
-    launch_pad = None
-    interplanetary_accelerator = None
+    air: Block = None
+    spawn: Block = None
+    removeWall: Block = None
+    removeOre: Block = None
+    cliff: Block = None
+    deepwater: Block = None
+    water: Block = None
+    taintedWater: Block = None
+    deepTaintedWater: Block = None
+    tar: Block = None
+    slag: Block = None
+    cryofluid: Block = None
+    stone: Block = None
+    craters: Block = None
+    charr: Block = None
+    sand: Block = None
+    darksand: Block = None
+    dirt: Block = None
+    mud: Block = None
+    ice: Block = None
+    snow: Block = None
+    darksandTaintedWater: Block = None
+    space: Block = None
+    empty: Block = None
+    dacite: Block = None
+    rhyolite: Block = None
+    rhyoliteCrater: Block = None
+    roughRhyolite: Block = None
+    regolith: Block = None
+    yellowStone: Block = None
+    redIce: Block = None
+    redStone: Block = None
+    denseRedStone: Block = None
+    arkyciteFloor: Block = None
+    arkyicStone: Block = None
+    redmat: Block = None
+    bluemat: Block = None
+    stoneWall: Block = None
+    dirtWall: Block = None
+    sporeWall: Block = None
+    iceWall: Block = None
+    daciteWall: Block = None
+    sporePine: Block = None
+    snowPine: Block = None
+    pine: Block = None
+    shrubs: Block = None
+    whiteTree: Block = None
+    whiteTreeDead: Block = None
+    sporeCluster: Block = None
+    redweed: Block = None
+    purbush: Block = None
+    yellowCoral: Block = None
+    rhyoliteVent: Block = None
+    carbonVent: Block = None
+    arkyicVent: Block = None
+    yellowStoneVent: Block = None
+    redStoneVent: Block = None
+    crystallineVent: Block = None
+    regolithWall: Block = None
+    yellowStoneWall: Block = None
+    rhyoliteWall: Block = None
+    carbonWall: Block = None
+    redIceWall: Block = None
+    ferricStoneWall: Block = None
+    beryllicStoneWall: Block = None
+    arkyicWall: Block = None
+    crystallineStoneWall: Block = None
+    redStoneWall: Block = None
+    redDiamondWall: Block = None
+    ferricStone: Block = None
+    ferricCraters: Block = None
+    carbonStone: Block = None
+    beryllicStone: Block = None
+    crystallineStone: Block = None
+    crystalFloor: Block = None
+    yellowStonePlates: Block = None
+    iceSnow: Block = None
+    sandWater: Block = None
+    darksandWater: Block = None
+    duneWall: Block = None
+    sandWall: Block = None
+    moss: Block = None
+    sporeMoss: Block = None
+    shale: Block = None
+    shaleWall: Block = None
+    grass: Block = None
+    salt: Block = None
+    coreZone: Block = None
+    shaleBoulder: Block = None
+    sandBoulder: Block = None
+    daciteBoulder: Block = None
+    boulder: Block = None
+    snowBoulder: Block = None
+    basaltBoulder: Block = None
+    carbonBoulder: Block = None
+    ferricBoulder: Block = None
+    beryllicBoulder: Block = None
+    yellowStoneBoulder: Block = None
+    arkyicBoulder: Block = None
+    crystalCluster: Block = None
+    vibrantCrystalCluster: Block = None
+    crystalBlocks: Block = None
+    crystalOrbs: Block = None
+    crystallineBoulder: Block = None
+    redIceBoulder: Block = None
+    rhyoliteBoulder: Block = None
+    redStoneBoulder: Block = None
+    metalFloor: Block = None
+    metalFloorDamaged: Block = None
+    metalFloor2: Block = None
+    metalFloor3: Block = None
+    metalFloor4: Block = None
+    metalFloor5: Block = None
+    basalt: Block = None
+    magmarock: Block = None
+    hotrock: Block = None
+    snowWall: Block = None
+    saltWall: Block = None
+    darkPanel1: Block = None
+    darkPanel2: Block = None
+    darkPanel3: Block = None
+    darkPanel4: Block = None
+    darkPanel5: Block = None
+    darkPanel6: Block = None
+    darkMetal: Block = None
+    pebbles: Block = None
+    tendrils: Block = None
+    oreCopper: Block = None
+    oreLead: Block = None
+    oreScrap: Block = None
+    oreCoal: Block = None
+    oreTitanium: Block = None
+    oreThorium: Block = None
+    oreBeryllium: Block = None
+    oreTungsten: Block = None
+    oreCrystalThorium: Block = None
+    wallOreThorium: Block = None
+    wallOreBeryllium: Block = None
+    graphiticWall: Block = None
+    wallOreTungsten: Block = None
+    siliconSmelter: Block = None
+    siliconCrucible: Block = None
+    kiln: Block = None
+    graphitePress: Block = None
+    plastaniumCompressor: Block = None
+    multiPress: Block = None
+    phaseWeaver: Block = None
+    surgeSmelter: Block = None
+    pyratiteMixer: Block = None
+    blastMixer: Block = None
+    cryofluidMixer: Block = None
+    melter: Block = None
+    separator: Block = None
+    disassembler: Block = None
+    sporePress: Block = None
+    pulverizer: Block = None
+    incinerator: Block = None
+    coalCentrifuge: Block = None
+    siliconArcFurnace: Block = None
+    electrolyzer: Block = None
+    oxidationChamber: Block = None
+    atmosphericConcentrator: Block = None
+    electricHeater: Block = None
+    slagHeater: Block = None
+    phaseHeater: Block = None
+    heatRedirector: Block = None
+    smallHeatRedirector: Block = None
+    heatRouter: Block = None
+    slagIncinerator: Block = None
+    carbideCrucible: Block = None
+    slagCentrifuge: Block = None
+    surgeCrucible: Block = None
+    cyanogenSynthesizer: Block = None
+    phaseSynthesizer: Block = None
+    heatReactor: Block = None
+    powerSource: Block = None
+    powerVoid: Block = None
+    itemSource: Block = None
+    itemVoid: Block = None
+    liquidSource: Block = None
+    liquidVoid: Block = None
+    payloadSource: Block = None
+    payloadVoid: Block = None
+    illuminator: Block = None
+    heatSource: Block = None
+    copperWall: Block = None
+    copperWallLarge: Block = None
+    titaniumWall: Block = None
+    titaniumWallLarge: Block = None
+    plastaniumWall: Block = None
+    plastaniumWallLarge: Block = None
+    thoriumWall: Block = None
+    thoriumWallLarge: Block = None
+    door: Block = None
+    doorLarge: Block = None
+    phaseWall: Block = None
+    phaseWallLarge: Block = None
+    surgeWall: Block = None
+    surgeWallLarge: Block = None
+    berylliumWall: Block = None
+    berylliumWallLarge: Block = None
+    tungstenWall: Block = None
+    tungstenWallLarge: Block = None
+    blastDoor: Block = None
+    reinforcedSurgeWall: Block = None
+    reinforcedSurgeWallLarge: Block = None
+    carbideWall: Block = None
+    carbideWallLarge: Block = None
+    shieldedWall: Block = None
+    mender: Block = None
+    mendProjector: Block = None
+    overdriveProjector: Block = None
+    overdriveDome: Block = None
+    forceProjector: Block = None
+    shockMine: Block = None
+    scrapWall: Block = None
+    scrapWallLarge: Block = None
+    scrapWallHuge: Block = None
+    scrapWallGigantic: Block = None
+    thruster: Block = None
+    radar: Block = None
+    buildTower: Block = None
+    regenProjector: Block = None
+    barrierProjector: Block = None
+    shockwaveTower: Block = None
+    shieldProjector: Block = None
+    largeShieldProjector: Block = None
+    shieldBreaker: Block = None
+    conveyor: Block = None
+    titaniumConveyor: Block = None
+    plastaniumConveyor: Block = None
+    armoredConveyor: Block = None
+    distributor: Block = None
+    junction: Block = None
+    itemBridge: Block = None
+    phaseConveyor: Block = None
+    sorter: Block = None
+    invertedSorter: Block = None
+    router: Block = None
+    overflowGate: Block = None
+    underflowGate: Block = None
+    massDriver: Block = None
+    duct: Block = None
+    armoredDuct: Block = None
+    ductRouter: Block = None
+    overflowDuct: Block = None
+    underflowDuct: Block = None
+    ductBridge: Block = None
+    ductUnloader: Block = None
+    surgeConveyor: Block = None
+    surgeRouter: Block = None
+    unitCargoLoader: Block = None
+    unitCargoUnloadPoint: Block = None
+    mechanicalPump: Block = None
+    rotaryPump: Block = None
+    impulsePump: Block = None
+    conduit: Block = None
+    pulseConduit: Block = None
+    platedConduit: Block = None
+    liquidRouter: Block = None
+    liquidContainer: Block = None
+    liquidTank: Block = None
+    liquidJunction: Block = None
+    bridgeConduit: Block = None
+    phaseConduit: Block = None
+    reinforcedPump: Block = None
+    reinforcedConduit: Block = None
+    reinforcedLiquidJunction: Block = None
+    reinforcedBridgeConduit: Block = None
+    reinforcedLiquidRouter: Block = None
+    reinforcedLiquidContainer: Block = None
+    reinforcedLiquidTank: Block = None
+    combustionGenerator: Block = None
+    thermalGenerator: Block = None
+    steamGenerator: Block = None
+    differentialGenerator: Block = None
+    rtgGenerator: Block = None
+    solarPanel: Block = None
+    largeSolarPanel: Block = None
+    thoriumReactor: Block = None
+    impactReactor: Block = None
+    battery: Block = None
+    batteryLarge: Block = None
+    powerNode: Block = None
+    powerNodeLarge: Block = None
+    surgeTower: Block = None
+    diode: Block = None
+    turbineCondenser: Block = None
+    ventCondenser: Block = None
+    chemicalCombustionChamber: Block = None
+    pyrolysisGenerator: Block = None
+    fluxReactor: Block = None
+    neoplasiaReactor: Block = None
+    beamNode: Block = None
+    beamTower: Block = None
+    beamLink: Block = None
+    mechanicalDrill: Block = None
+    pneumaticDrill: Block = None
+    laserDrill: Block = None
+    blastDrill: Block = None
+    waterExtractor: Block = None
+    oilExtractor: Block = None
+    cultivator: Block = None
+    cliffCrusher: Block = None
+    largeCliffCrusher: Block = None
+    plasmaBore: Block = None
+    largePlasmaBore: Block = None
+    impactDrill: Block = None
+    eruptionDrill: Block = None
+    coreShard: Block = None
+    coreFoundation: Block = None
+    coreNucleus: Block = None
+    vault: Block = None
+    container: Block = None
+    unloader: Block = None
+    coreBastion: Block = None
+    coreCitadel: Block = None
+    coreAcropolis: Block = None
+    reinforcedContainer: Block = None
+    reinforcedVault: Block = None
+    duo: Block = None
+    scatter: Block = None
+    scorch: Block = None
+    hail: Block = None
+    arc: Block = None
+    wave: Block = None
+    lancer: Block = None
+    swarmer: Block = None
+    salvo: Block = None
+    fuse: Block = None
+    ripple: Block = None
+    cyclone: Block = None
+    foreshadow: Block = None
+    spectre: Block = None
+    meltdown: Block = None
+    segment: Block = None
+    parallax: Block = None
+    tsunami: Block = None
+    breach: Block = None
+    diffuse: Block = None
+    sublimate: Block = None
+    titan: Block = None
+    disperse: Block = None
+    afflict: Block = None
+    lustre: Block = None
+    scathe: Block = None
+    smite: Block = None
+    malign: Block = None
+    groundFactory: Block = None
+    airFactory: Block = None
+    navalFactory: Block = None
+    additiveReconstructor: Block = None
+    multiplicativeReconstructor: Block = None
+    exponentialReconstructor: Block = None
+    tetrativeReconstructor: Block = None
+    repairPoint: Block = None
+    repairTurret: Block = None
+    tankFabricator: Block = None
+    shipFabricator: Block = None
+    mechFabricator: Block = None
+    tankRefabricator: Block = None
+    shipRefabricator: Block = None
+    mechRefabricator: Block = None
+    primeRefabricator: Block = None
+    tankAssembler: Block = None
+    shipAssembler: Block = None
+    mechAssembler: Block = None
+    basicAssemblerModule: Block = None
+    unitRepairTower: Block = None
+    payloadConveyor: Block = None
+    payloadRouter: Block = None
+    reinforcedPayloadConveyor: Block = None
+    reinforcedPayloadRouter: Block = None
+    payloadMassDriver: Block = None
+    largePayloadMassDriver: Block = None
+    smallDeconstructor: Block = None
+    deconstructor: Block = None
+    constructor: Block = None
+    largeConstructor: Block = None
+    payloadLoader: Block = None
+    payloadUnloader: Block = None
+    message: Block = None
+    switchBlock: Block = None
+    microProcessor: Block = None
+    logicProcessor: Block = None
+    hyperProcessor: Block = None
+    largeLogicDisplay: Block = None
+    logicDisplay: Block = None
+    memoryCell: Block = None
+    memoryBank: Block = None
+    canvas: Block = None
+    reinforcedMessage: Block = None
+    worldProcessor: Block = None
+    worldCell: Block = None
+    worldMessage: Block = None
+    worldSwitch: Block = None
+    launchPad: Block = None
+    interplanetaryAccelerator: Block = None
     
     @staticmethod
     def load():
         
         # region environment
-        
+        Blocks.air
         Blocks.air = AirBlock('air')
         Blocks.spawn = SpawnBlock('spawn')
         Blocks.removeWall = RemoveWall('remove-wall')
@@ -975,7 +949,7 @@ class Blocks:
         ]
 
         for b in blocks:
-            b.wall = Blocks.dark_metal
+            b.wall = Blocks.darkMetal
         
         Blocks.pebbles = OverlayFloor('pebbles')
         Blocks.tendrils = OverlayFloor('tendrils')
@@ -1032,5 +1006,164 @@ class Blocks:
         # region crafting
         
         Blocks.graphitePress = GenericCrafter("graphite-press")
-        Blocks.graphitePress.set_requirements(Category.crafting, ItemStack.with_item(Items.titanium, 100, Items.silicon, 25, Items.lead, 100, Items.graphite, 50))
+        Blocks.graphitePress.setRequirements(Category.crafting, ItemStack.with_item(Items.titanium, 100, Items.silicon, 25, Items.lead, 100, Items.graphite, 50))
+        # craftEffect = Fx.pulverizeMedium
+        Blocks.graphitePress.outputItem = ItemStack(Items.graphite, 1)
+        Blocks.graphitePress.craftTime = 90.0
+        Blocks.graphitePress.size = 2
+        Blocks.graphitePress.hasItems = True
+        Blocks.graphitePress.consumeItem(Items.coal, 2)
+        
+        Blocks.multiPress = GenericCrafter("multi-press")
+        Blocks.multiPress.setRequirements(Category.crafting, ItemStack.with_item(Items.titanium, 100, Items.silicon, 25, Items.lead, 100, Items.graphite, 50))
+        # Blocks.multiPress.craftEffect = Fx.pulverizeMedium
+        Blocks.multiPress.outputItem = ItemStack(Items.graphite, 2)
+        Blocks.multiPress.craftTime = 30.0
+        Blocks.multiPress.itemCapacity = 20
+        Blocks.multiPress.size = 3
+        Blocks.multiPress.hasItems = True
+        Blocks.multiPress.hasLiquids = True
+        Blocks.multiPress.hasPower = True
+        Blocks.multiPress.consumePower(1.8)
+        Blocks.multiPress.consumeItem(Items.coal, 3)
+        Blocks.multiPress.consumeLiquid(Liquids.water, 0.1)
+        
+        Blocks.siliconSmelter = GenericCrafter("silicon-smelter")
+        Blocks.siliconSmelter.setRequirements(Category.crafting, ItemStack.with_item(Items.copper, 30, Items.lead, 25))
+        # Blocks.siliconSmelter.craftEffect = Fx.smeltsmoke
+        Blocks.siliconSmelter.outputItem = ItemStack(Items.silicon, 1)
+        Blocks.siliconSmelter.craftTime = 40.0
+        Blocks.siliconSmelter.size = 2
+        Blocks.siliconSmelter.hasPower = True
+        Blocks.siliconSmelter.hasLiquids = False
+        # Blocks.siliconSmelter.drawer = DrawMulti(DrawDefault(), DrawFlame(Color.valueOf("ffef99")))
+        # Blocks.siliconSmelter.ambientSound = Sounds.smelter
+        Blocks.siliconSmelter.ambientSoundVolume = 0.07
+        Blocks.siliconSmelter.consumeItems(ItemStack.with_item(Items.coal, 1, Items.sand, 2))
+        Blocks.siliconSmelter.consumePower(0.50)
+        
+        Blocks.siliconCrucible = AttributeCrafter("silicon-crucible")
+        Blocks.siliconCrucible.setRequirements(Category.crafting, ItemStack.with_item(Items.titanium, 120, Items.metaglass, 80, Items.plastanium, 35, Items.silicon, 60))
+        # Blocks.siliconCrucible.craftEffect = Fx.smeltsmoke
+        Blocks.siliconCrucible.outputItem = ItemStack(Items.silicon, 8)
+        Blocks.siliconCrucible.craftTime = 90.0
+        Blocks.siliconCrucible.size = 3
+        Blocks.siliconCrucible.hasPower = True
+        Blocks.siliconCrucible.hasLiquids = False
+        Blocks.siliconCrucible.itemCapacity = 30
+        Blocks.siliconCrucible.boostScale = 0.15
+        # Blocks.siliconCrucible.drawer = DrawMulti(DrawDefault(), DrawFlame(Color.valueOf("ffef99")))
+        # Blocks.siliconCrucible.ambientSound = Sounds.smelter
+        Blocks.siliconCrucible.ambientSoundVolume = 0.07
+        Blocks.siliconCrucible.consumeItems(ItemStack.with_item(Items.coal, 4, Items.sand, 6, Items.pyratite, 1))
+        Blocks.siliconCrucible.consumePower(4.0)
+        
+        Blocks.kiln = GenericCrafter("kiln")
+        Blocks.kiln.setRequirements(Category.crafting, ItemStack.with_item(Items.copper, 60, Items.graphite, 30, Items.lead, 30))
+        # Blocks.kiln.craftEffect = Fx.smeltsmoke
+        Blocks.kiln.outputItem = ItemStack(Items.metaglass, 1)
+        Blocks.kiln.craftTime = 30.0
+        Blocks.kiln.size = 2
+        Blocks.kiln.hasPower = True
+        Blocks.kiln.hasItems = True
+        # Blocks.kiln.drawer = DrawMulti(DrawDefault(), DrawFlame(Color.valueOf("ffc099")))
+        # Blocks.kiln.ambientSound = Sounds.smelter
+        Blocks.kiln.ambientSoundVolume = 0.07
+        Blocks.kiln.consumeItems(ItemStack.with_item(Items.lead, 1, Items.sand, 1))
+        Blocks.kiln.consumePower(0.60)
+
+        Blocks.plastaniumCompressor = GenericCrafter("plastanium-compressor")
+        Blocks.plastaniumCompressor.setRequirements(Category.crafting, ItemStack.with_item(Items.silicon, 80, Items.lead, 115, Items.graphite, 60, Items.titanium, 80))
+        Blocks.plastaniumCompressor.hasItems = True
+        Blocks.plastaniumCompressor.liquidCapacity = 60.0
+        Blocks.plastaniumCompressor.craftTime = 60.0
+        Blocks.plastaniumCompressor.outputItem = ItemStack(Items.plastanium, 1)
+        Blocks.plastaniumCompressor.size = 2
+        Blocks.plastaniumCompressor.health = 320
+        Blocks.plastaniumCompressor.hasPower = True
+        Blocks.plastaniumCompressor.hasLiquids = True
+        # Blocks.plastaniumCompressor.craftEffect = Fx.formsmoke
+        # Blocks.plastaniumCompressor.updateEffect = Fx.plasticburn
+        # Blocks.plastaniumCompressor.drawer = DrawMulti(DrawDefault(), DrawFade())
+        Blocks.plastaniumCompressor.consumeLiquid(Liquids.oil, 0.25)
+        Blocks.plastaniumCompressor.consumePower(3.0)
+        Blocks.plastaniumCompressor.consumeItem(Items.titanium, 2)
+
+        Blocks.phaseWeaver = GenericCrafter("phase-weaver")
+        Blocks.phaseWeaver.setRequirements(Category.crafting, ItemStack.with_item(Items.silicon, 130, Items.lead, 120, Items.thorium, 75))
+        # Blocks.phaseWeaver.craftEffect = Fx.smeltsmoke
+        Blocks.phaseWeaver.outputItem = ItemStack(Items.phaseFabric, 1)
+        Blocks.phaseWeaver.craftTime = 120.0
+        Blocks.phaseWeaver.size = 2
+        Blocks.phaseWeaver.hasPower = True
+        # Blocks.phaseWeaver.drawer = DrawMulti(DrawRegion("-bottom"), DrawWeave(), DrawDefault())
+        Blocks.phaseWeaver.envEnabled |= Env.space
+        # Blocks.phaseWeaver.ambientSound = Sounds.techloop
+        Blocks.phaseWeaver.ambientSoundVolume = 0.02
+        Blocks.phaseWeaver.consumeItems(ItemStack.with_item(Items.thorium, 4, Items.sand, 10))
+        Blocks.phaseWeaver.consumePower(5.0)
+        Blocks.phaseWeaver.itemCapacity = 30
+
+        Blocks.surgeSmelter = GenericCrafter("surge-smelter")
+        Blocks.surgeSmelter.setRequirements(Category.crafting, ItemStack.with_item(Items.silicon, 80, Items.lead, 80, Items.thorium, 70))
+        # Blocks.surgeSmelter.craftEffect = Fx.smeltsmoke
+        Blocks.surgeSmelter.outputItem = ItemStack(Items.surgeAlloy, 1)
+        Blocks.surgeSmelter.craftTime = 75.0
+        Blocks.surgeSmelter.size = 3
+        Blocks.surgeSmelter.hasPower = True
+        Blocks.surgeSmelter.itemCapacity = 20
+        # Blocks.surgeSmelter.drawer = DrawMulti(DrawDefault(), DrawFlame())
+        Blocks.surgeSmelter.consumePower(4.0)
+        Blocks.surgeSmelter.consumeItems(ItemStack.with_item(Items.copper, 3, Items.lead, 4, Items.titanium, 2, Items.silicon, 3))
+
+        Blocks.cryofluidMixer = GenericCrafter("cryofluid-mixer")
+        Blocks.cryofluidMixer.setRequirements(Category.crafting, ItemStack.with_item(Items.lead, 65, Items.silicon, 40, Items.titanium, 60))
+        Blocks.cryofluidMixer.outputLiquid = LiquidStack(Liquids.cryofluid, 12.0 / 60.0)
+        Blocks.cryofluidMixer.size = 2
+        Blocks.cryofluidMixer.hasPower = True
+        Blocks.cryofluidMixer.hasItems = True
+        Blocks.cryofluidMixer.hasLiquids = True
+        Blocks.cryofluidMixer.rotate = False
+        Blocks.cryofluidMixer.solid = True
+        Blocks.cryofluidMixer.outputsLiquid = True
+        Blocks.cryofluidMixer.envEnabled = Env.any
+        # Blocks.cryofluidMixer.drawer = DrawMulti(DrawRegion("-bottom"), DrawLiquidTile(Liquids.water), DrawLiquidTile(Liquids.cryofluid, drawLiquidLight=True), DrawDefault())
+        Blocks.cryofluidMixer.liquidCapacity = 24.0
+        Blocks.cryofluidMixer.craftTime = 120.0
+        Blocks.cryofluidMixer.lightLiquid = Liquids.cryofluid
+        Blocks.cryofluidMixer.consumePower(1.0)
+        Blocks.cryofluidMixer.consumeItem(Items.titanium)
+        Blocks.cryofluidMixer.consumeLiquid(Liquids.water, 12.0 / 60.0)
+
+        Blocks.pyratiteMixer = GenericCrafter("pyratite-mixer")
+        Blocks.pyratiteMixer.setRequirements(Category.crafting, ItemStack.with_item(Items.copper, 50, Items.lead, 25))
+        Blocks.pyratiteMixer.hasItems = True
+        Blocks.pyratiteMixer.hasPower = True
+        Blocks.pyratiteMixer.outputItem = ItemStack(Items.pyratite, 1)
+        Blocks.pyratiteMixer.envEnabled |= Env.space
+        Blocks.pyratiteMixer.size = 2
+        Blocks.pyratiteMixer.consumePower(0.20)
+        Blocks.pyratiteMixer.consumeItems(ItemStack.with_item(Items.coal, 1, Items.lead, 2, Items.sand, 2))
+
+        Blocks.blastMixer = GenericCrafter("blast-mixer")
+        Blocks.blastMixer.setRequirements(Category.crafting, ItemStack.with_item(Items.lead, 30, Items.titanium, 20))
+        Blocks.blastMixer.hasItems = True
+        Blocks.blastMixer.hasPower = True
+        Blocks.blastMixer.outputItem = ItemStack(Items.blastCompound, 1)
+        Blocks.blastMixer.size = 2
+        Blocks.blastMixer.envEnabled |= Env.space
+        Blocks.blastMixer.consumeItems(ItemStack.with_item(Items.pyratite, 1, Items.sporePod, 1))
+        Blocks.blastMixer.consumePower(0.40)
+
+        Blocks.melter = GenericCrafter("melter")
+        Blocks.melter.setRequirements(Category.crafting, ItemStack.with_item(Items.copper, 30, Items.lead, 35, Items.graphite, 45))
+        Blocks.melter.health = 200
+        Blocks.melter.outputLiquid = LiquidStack(Liquids.slag, 12.0 / 60.0)
+        Blocks.melter.craftTime = 10.0
+        Blocks.melter.hasLiquids = True
+        Blocks.melter.hasPower = True
+        # Blocks.melter.drawer = DrawMulti(DrawRegion("-bottom"), DrawLiquidTile(), DrawDefault())
+        Blocks.melter.consumePower(1.0)
+        Blocks.melter.consumeItem(Items.scrap, 1)
+        
         
