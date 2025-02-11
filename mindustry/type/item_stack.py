@@ -5,7 +5,7 @@ from .item import *
 
 from mindustry.content.items import Items
 
-class ItemStack:
+class ItemStack:    
     item:Item
     amount:int 
     
