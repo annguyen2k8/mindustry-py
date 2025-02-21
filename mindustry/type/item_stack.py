@@ -11,10 +11,16 @@ class ItemStack:
     
     def __init__(self, item:Item=Items.copper, amount:int=0) -> None:
         self.item = item
-        self.amount = amount
+        self.amount = amount    
+    
+    def mult(stacks:List[ItemStack], amount:float) -> List[ItemStack]:
+        copy:List[ItemStack] = []
+        for stack in range(stacks):
+            copy.append(ItemStack(stack.item, round(stack.amount)))
+        return copy
     
     @staticmethod
-    def with_item(*items:List[object]) -> List[ItemStack]:
+    def with_items(*items:List[object]) -> List[ItemStack]:
         stacks:List[ItemStack] = []
         for i in range(0, len(items), 2):
             stacks.append(ItemStack(items[i], items[i + 1]))

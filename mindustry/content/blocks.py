@@ -5,6 +5,10 @@ from mindustry.graphics import *
 from mindustry.type import *
 from mindustry.vars import *
 
+from mindustry.type.liquid_stack import LiquidStack
+from mindustry.type.item_stack import ItemStack
+
+
 # from mindustry.world.block import Block
 
 class Blocks:
@@ -1006,7 +1010,7 @@ class Blocks:
         # region crafting
         
         Blocks.graphitePress = GenericCrafter("graphite-press")
-        Blocks.graphitePress.setRequirements(Category.crafting, ItemStack.with_item(Items.titanium, 100, Items.silicon, 25, Items.lead, 100, Items.graphite, 50))
+        Blocks.graphitePress.setRequirements(Category.crafting, ItemStack.with_items(Items.titanium, 100, Items.silicon, 25, Items.lead, 100, Items.graphite, 50))
         # craftEffect = Fx.pulverizeMedium
         Blocks.graphitePress.outputItem = ItemStack(Items.graphite, 1)
         Blocks.graphitePress.craftTime = 90.0
@@ -1015,7 +1019,7 @@ class Blocks:
         Blocks.graphitePress.consumeItem(Items.coal, 2)
         
         Blocks.multiPress = GenericCrafter("multi-press")
-        Blocks.multiPress.setRequirements(Category.crafting, ItemStack.with_item(Items.titanium, 100, Items.silicon, 25, Items.lead, 100, Items.graphite, 50))
+        Blocks.multiPress.setRequirements(Category.crafting, ItemStack.with_items(Items.titanium, 100, Items.silicon, 25, Items.lead, 100, Items.graphite, 50))
         # Blocks.multiPress.craftEffect = Fx.pulverizeMedium
         Blocks.multiPress.outputItem = ItemStack(Items.graphite, 2)
         Blocks.multiPress.craftTime = 30.0
@@ -1029,7 +1033,7 @@ class Blocks:
         Blocks.multiPress.consumeLiquid(Liquids.water, 0.1)
         
         Blocks.siliconSmelter = GenericCrafter("silicon-smelter")
-        Blocks.siliconSmelter.setRequirements(Category.crafting, ItemStack.with_item(Items.copper, 30, Items.lead, 25))
+        Blocks.siliconSmelter.setRequirements(Category.crafting, ItemStack.with_items(Items.copper, 30, Items.lead, 25))
         # Blocks.siliconSmelter.craftEffect = Fx.smeltsmoke
         Blocks.siliconSmelter.outputItem = ItemStack(Items.silicon, 1)
         Blocks.siliconSmelter.craftTime = 40.0
@@ -1039,11 +1043,11 @@ class Blocks:
         # Blocks.siliconSmelter.drawer = DrawMulti(DrawDefault(), DrawFlame(Color.valueOf("ffef99")))
         # Blocks.siliconSmelter.ambientSound = Sounds.smelter
         Blocks.siliconSmelter.ambientSoundVolume = 0.07
-        Blocks.siliconSmelter.consumeItems(ItemStack.with_item(Items.coal, 1, Items.sand, 2))
+        Blocks.siliconSmelter.consumeItems(ItemStack.with_items(Items.coal, 1, Items.sand, 2))
         Blocks.siliconSmelter.consumePower(0.50)
         
         Blocks.siliconCrucible = AttributeCrafter("silicon-crucible")
-        Blocks.siliconCrucible.setRequirements(Category.crafting, ItemStack.with_item(Items.titanium, 120, Items.metaglass, 80, Items.plastanium, 35, Items.silicon, 60))
+        Blocks.siliconCrucible.setRequirements(Category.crafting, ItemStack.with_items(Items.titanium, 120, Items.metaglass, 80, Items.plastanium, 35, Items.silicon, 60))
         # Blocks.siliconCrucible.craftEffect = Fx.smeltsmoke
         Blocks.siliconCrucible.outputItem = ItemStack(Items.silicon, 8)
         Blocks.siliconCrucible.craftTime = 90.0
@@ -1055,11 +1059,11 @@ class Blocks:
         # Blocks.siliconCrucible.drawer = DrawMulti(DrawDefault(), DrawFlame(Color.valueOf("ffef99")))
         # Blocks.siliconCrucible.ambientSound = Sounds.smelter
         Blocks.siliconCrucible.ambientSoundVolume = 0.07
-        Blocks.siliconCrucible.consumeItems(ItemStack.with_item(Items.coal, 4, Items.sand, 6, Items.pyratite, 1))
+        Blocks.siliconCrucible.consumeItems(ItemStack.with_items(Items.coal, 4, Items.sand, 6, Items.pyratite, 1))
         Blocks.siliconCrucible.consumePower(4.0)
         
         Blocks.kiln = GenericCrafter("kiln")
-        Blocks.kiln.setRequirements(Category.crafting, ItemStack.with_item(Items.copper, 60, Items.graphite, 30, Items.lead, 30))
+        Blocks.kiln.setRequirements(Category.crafting, ItemStack.with_items(Items.copper, 60, Items.graphite, 30, Items.lead, 30))
         # Blocks.kiln.craftEffect = Fx.smeltsmoke
         Blocks.kiln.outputItem = ItemStack(Items.metaglass, 1)
         Blocks.kiln.craftTime = 30.0
@@ -1069,11 +1073,11 @@ class Blocks:
         # Blocks.kiln.drawer = DrawMulti(DrawDefault(), DrawFlame(Color.valueOf("ffc099")))
         # Blocks.kiln.ambientSound = Sounds.smelter
         Blocks.kiln.ambientSoundVolume = 0.07
-        Blocks.kiln.consumeItems(ItemStack.with_item(Items.lead, 1, Items.sand, 1))
+        Blocks.kiln.consumeItems(ItemStack.with_items(Items.lead, 1, Items.sand, 1))
         Blocks.kiln.consumePower(0.60)
 
         Blocks.plastaniumCompressor = GenericCrafter("plastanium-compressor")
-        Blocks.plastaniumCompressor.setRequirements(Category.crafting, ItemStack.with_item(Items.silicon, 80, Items.lead, 115, Items.graphite, 60, Items.titanium, 80))
+        Blocks.plastaniumCompressor.setRequirements(Category.crafting, ItemStack.with_items(Items.silicon, 80, Items.lead, 115, Items.graphite, 60, Items.titanium, 80))
         Blocks.plastaniumCompressor.hasItems = True
         Blocks.plastaniumCompressor.liquidCapacity = 60.0
         Blocks.plastaniumCompressor.craftTime = 60.0
@@ -1090,7 +1094,7 @@ class Blocks:
         Blocks.plastaniumCompressor.consumeItem(Items.titanium, 2)
 
         Blocks.phaseWeaver = GenericCrafter("phase-weaver")
-        Blocks.phaseWeaver.setRequirements(Category.crafting, ItemStack.with_item(Items.silicon, 130, Items.lead, 120, Items.thorium, 75))
+        Blocks.phaseWeaver.setRequirements(Category.crafting, ItemStack.with_items(Items.silicon, 130, Items.lead, 120, Items.thorium, 75))
         # Blocks.phaseWeaver.craftEffect = Fx.smeltsmoke
         Blocks.phaseWeaver.outputItem = ItemStack(Items.phaseFabric, 1)
         Blocks.phaseWeaver.craftTime = 120.0
@@ -1100,12 +1104,12 @@ class Blocks:
         Blocks.phaseWeaver.envEnabled |= Env.space
         # Blocks.phaseWeaver.ambientSound = Sounds.techloop
         Blocks.phaseWeaver.ambientSoundVolume = 0.02
-        Blocks.phaseWeaver.consumeItems(ItemStack.with_item(Items.thorium, 4, Items.sand, 10))
+        Blocks.phaseWeaver.consumeItems(ItemStack.with_items(Items.thorium, 4, Items.sand, 10))
         Blocks.phaseWeaver.consumePower(5.0)
         Blocks.phaseWeaver.itemCapacity = 30
 
         Blocks.surgeSmelter = GenericCrafter("surge-smelter")
-        Blocks.surgeSmelter.setRequirements(Category.crafting, ItemStack.with_item(Items.silicon, 80, Items.lead, 80, Items.thorium, 70))
+        Blocks.surgeSmelter.setRequirements(Category.crafting, ItemStack.with_items(Items.silicon, 80, Items.lead, 80, Items.thorium, 70))
         # Blocks.surgeSmelter.craftEffect = Fx.smeltsmoke
         Blocks.surgeSmelter.outputItem = ItemStack(Items.surgeAlloy, 1)
         Blocks.surgeSmelter.craftTime = 75.0
@@ -1114,10 +1118,10 @@ class Blocks:
         Blocks.surgeSmelter.itemCapacity = 20
         # Blocks.surgeSmelter.drawer = DrawMulti(DrawDefault(), DrawFlame())
         Blocks.surgeSmelter.consumePower(4.0)
-        Blocks.surgeSmelter.consumeItems(ItemStack.with_item(Items.copper, 3, Items.lead, 4, Items.titanium, 2, Items.silicon, 3))
+        Blocks.surgeSmelter.consumeItems(ItemStack.with_items(Items.copper, 3, Items.lead, 4, Items.titanium, 2, Items.silicon, 3))
 
         Blocks.cryofluidMixer = GenericCrafter("cryofluid-mixer")
-        Blocks.cryofluidMixer.setRequirements(Category.crafting, ItemStack.with_item(Items.lead, 65, Items.silicon, 40, Items.titanium, 60))
+        Blocks.cryofluidMixer.setRequirements(Category.crafting, ItemStack.with_items(Items.lead, 65, Items.silicon, 40, Items.titanium, 60))
         Blocks.cryofluidMixer.outputLiquid = LiquidStack(Liquids.cryofluid, 12.0 / 60.0)
         Blocks.cryofluidMixer.size = 2
         Blocks.cryofluidMixer.hasPower = True
@@ -1136,27 +1140,27 @@ class Blocks:
         Blocks.cryofluidMixer.consumeLiquid(Liquids.water, 12.0 / 60.0)
 
         Blocks.pyratiteMixer = GenericCrafter("pyratite-mixer")
-        Blocks.pyratiteMixer.setRequirements(Category.crafting, ItemStack.with_item(Items.copper, 50, Items.lead, 25))
+        Blocks.pyratiteMixer.setRequirements(Category.crafting, ItemStack.with_items(Items.copper, 50, Items.lead, 25))
         Blocks.pyratiteMixer.hasItems = True
         Blocks.pyratiteMixer.hasPower = True
         Blocks.pyratiteMixer.outputItem = ItemStack(Items.pyratite, 1)
         Blocks.pyratiteMixer.envEnabled |= Env.space
         Blocks.pyratiteMixer.size = 2
         Blocks.pyratiteMixer.consumePower(0.20)
-        Blocks.pyratiteMixer.consumeItems(ItemStack.with_item(Items.coal, 1, Items.lead, 2, Items.sand, 2))
+        Blocks.pyratiteMixer.consumeItems(ItemStack.with_items(Items.coal, 1, Items.lead, 2, Items.sand, 2))
 
         Blocks.blastMixer = GenericCrafter("blast-mixer")
-        Blocks.blastMixer.setRequirements(Category.crafting, ItemStack.with_item(Items.lead, 30, Items.titanium, 20))
+        Blocks.blastMixer.setRequirements(Category.crafting, ItemStack.with_items(Items.lead, 30, Items.titanium, 20))
         Blocks.blastMixer.hasItems = True
         Blocks.blastMixer.hasPower = True
         Blocks.blastMixer.outputItem = ItemStack(Items.blastCompound, 1)
         Blocks.blastMixer.size = 2
         Blocks.blastMixer.envEnabled |= Env.space
-        Blocks.blastMixer.consumeItems(ItemStack.with_item(Items.pyratite, 1, Items.sporePod, 1))
+        Blocks.blastMixer.consumeItems(ItemStack.with_items(Items.pyratite, 1, Items.sporePod, 1))
         Blocks.blastMixer.consumePower(0.40)
 
         Blocks.melter = GenericCrafter("melter")
-        Blocks.melter.setRequirements(Category.crafting, ItemStack.with_item(Items.copper, 30, Items.lead, 35, Items.graphite, 45))
+        Blocks.melter.setRequirements(Category.crafting, ItemStack.with_items(Items.copper, 30, Items.lead, 35, Items.graphite, 45))
         Blocks.melter.health = 200
         Blocks.melter.outputLiquid = LiquidStack(Liquids.slag, 12.0 / 60.0)
         Blocks.melter.craftTime = 10.0
@@ -1165,5 +1169,504 @@ class Blocks:
         # Blocks.melter.drawer = DrawMulti(DrawRegion("-bottom"), DrawLiquidTile(), DrawDefault())
         Blocks.melter.consumePower(1.0)
         Blocks.melter.consumeItem(Items.scrap, 1)
+        
+        Blocks.separator = GenericCrafter("separator")
+        Blocks.separator.setRequirements(Category.crafting, ItemStack.with_items(Items.copper, 30, Items.titanium, 25))
+        Blocks.separator.outputItems = ItemStack.with_items(Items.copper, 5, Items.lead, 3, Items.graphite, 2, Items.titanium, 2)
+        Blocks.separator.hasPower = True
+        Blocks.separator.craftTime = 35.0
+        Blocks.separator.size = 2
+        Blocks.separator.consumePower(1.1)
+        Blocks.separator.consumeLiquid(Liquids.slag, 4.0 / 60.0)
+
+        Blocks.disassembler = GenericCrafter("disassembler")
+        Blocks.disassembler.setRequirements(Category.crafting, ItemStack.with_items(Items.plastanium, 40, Items.titanium, 100, Items.silicon, 150, Items.thorium, 80))
+        Blocks.disassembler.outputItems = ItemStack.with_items(Items.sand, 2, Items.graphite, 1, Items.titanium, 1, Items.thorium, 1)
+        Blocks.disassembler.hasPower = True
+        Blocks.disassembler.craftTime = 15.0
+        Blocks.disassembler.size = 3
+        Blocks.disassembler.itemCapacity = 20
+        Blocks.disassembler.consumePower(4.0)
+        Blocks.disassembler.consumeItem(Items.scrap)
+        Blocks.disassembler.consumeLiquid(Liquids.slag, 0.12)
+
+        Blocks.sporePress = GenericCrafter("spore-press")
+        Blocks.sporePress.setRequirements(Category.crafting, ItemStack.with_items(Items.lead, 35, Items.silicon, 30))
+        Blocks.sporePress.liquidCapacity = 60.0
+        Blocks.sporePress.craftTime = 20.0
+        Blocks.sporePress.outputLiquid = LiquidStack(Liquids.oil, 18.0 / 60.0)
+        Blocks.sporePress.size = 2
+        Blocks.sporePress.health = 320
+        Blocks.sporePress.hasLiquids = True
+        Blocks.sporePress.hasPower = True
+        Blocks.sporePress.consumeItem(Items.sporePod, 1)
+        Blocks.sporePress.consumePower(0.7)
+
+        Blocks.pulverizer = GenericCrafter("pulverizer")
+        Blocks.pulverizer.setRequirements(Category.crafting, ItemStack.with_items(Items.copper, 30, Items.lead, 25))
+        Blocks.pulverizer.outputItem = ItemStack(Items.sand, 1)
+        Blocks.pulverizer.craftTime = 40.0
+        Blocks.pulverizer.hasItems = True
+        Blocks.pulverizer.hasPower = True
+        Blocks.pulverizer.consumeItem(Items.scrap, 1)
+        Blocks.pulverizer.consumePower(0.5)
+
+        Blocks.coalCentrifuge = GenericCrafter("coal-centrifuge")
+        Blocks.coalCentrifuge.setRequirements(Category.crafting, ItemStack.with_items(Items.titanium, 20, Items.graphite, 40, Items.lead, 30))
+        Blocks.coalCentrifuge.outputItem = ItemStack(Items.coal, 1)
+        Blocks.coalCentrifuge.craftTime = 30.0
+        Blocks.coalCentrifuge.size = 2
+        Blocks.coalCentrifuge.hasPower = True
+        Blocks.coalCentrifuge.hasItems = True
+        Blocks.coalCentrifuge.hasLiquids = True
+        Blocks.coalCentrifuge.consumeLiquid(Liquids.oil, 0.1)
+        Blocks.coalCentrifuge.consumePower(0.7)
+        
+        Blocks.incinerator = GenericCrafter("incinerator")
+        Blocks.incinerator.setRequirements(Category.crafting, ItemStack.with_items(Items.graphite, 5, Items.lead, 15))
+        Blocks.incinerator.health = 90
+        Blocks.incinerator.envEnabled |= Env.space
+        Blocks.incinerator.consumePower(0.50)
+
+        Blocks.siliconArcFurnace = GenericCrafter("silicon-arc-furnace")
+        Blocks.siliconArcFurnace.setRequirements(Category.crafting, ItemStack.with_items(Items.beryllium, 70, Items.graphite, 80))
+        # Blocks.siliconArcFurnace.craftEffect = Fx.none
+        Blocks.siliconArcFurnace.outputItem = ItemStack(Items.silicon, 4)
+        Blocks.siliconArcFurnace.craftTime = 50.0
+        Blocks.siliconArcFurnace.size = 3
+        Blocks.siliconArcFurnace.hasPower = True
+        Blocks.siliconArcFurnace.hasLiquids = False
+        Blocks.siliconArcFurnace.envEnabled |= Env.space | Env.underwater
+        Blocks.siliconArcFurnace.envDisabled = Env.none
+        Blocks.siliconArcFurnace.itemCapacity = 30
+        # Blocks.siliconArcFurnace.drawer = DrawMulti(DrawRegion("-bottom"), DrawArcSmelt(), DrawDefault())
+        Blocks.siliconArcFurnace.fogRadius = 3
+        Blocks.siliconArcFurnace.researchCost = ItemStack.with_items(Items.beryllium, 150, Items.graphite, 50)
+        # Blocks.siliconArcFurnace.ambientSound = Sounds.smelter
+        # Blocks.siliconArcFurnace.ambientSoundVolume = 0.12
+        Blocks.siliconArcFurnace.consumeItems(ItemStack.with_items(Items.graphite, 1, Items.sand, 4))
+        Blocks.siliconArcFurnace.consumePower(6.0)
+
+        Blocks.electrolyzer = GenericCrafter("electrolyzer")
+        Blocks.electrolyzer.setRequirements(Category.crafting, ItemStack.with_items(Items.silicon, 50, Items.graphite, 40, Items.beryllium, 130, Items.tungsten, 80))
+        Blocks.electrolyzer.size = 3
+        Blocks.electrolyzer.researchCostMultiplier = 1.2
+        Blocks.electrolyzer.craftTime = 10.0
+        Blocks.electrolyzer.rotate = True
+        Blocks.electrolyzer.invertFlip = True
+        Blocks.electrolyzer.group = BlockGroup.liquids
+        Blocks.electrolyzer.itemCapacity = 0
+        Blocks.electrolyzer.liquidCapacity = 50.0
+        Blocks.electrolyzer.consumeLiquid(Liquids.water, 10.0 / 60.0)
+        Blocks.electrolyzer.consumePower(1.0)
+        # drawer = new DrawMulti(
+        #         new DrawRegion("-bottom"),
+        #         new DrawLiquidTile(Liquids.water, 2f),
+        #         new DrawBubbles(Color.valueOf("7693e3")){{
+        #             sides = 10;
+        #             recurrence = 3f;
+        #             spread = 6;
+        #             radius = 1.5f;
+        #             amount = 20;
+        #         }},
+        #         new DrawRegion(),
+        #         new DrawLiquidOutputs(),
+        #         new DrawGlowRegion(){{
+        #             alpha = 0.7f;
+        #             color = Color.valueOf("c4bdf3");
+        #             glowIntensity = 0.3f;
+        #             glowScale = 6f;
+        #         }}
+        
+        # Blocks.electrolyzer.ambientSound = Sounds.electricHum
+        Blocks.electrolyzer.ambientSoundVolume = 0.08
+        Blocks.electrolyzer.regionRotated1 = 3
+        Blocks.electrolyzer.outputLiquids = LiquidStack.with_liquids(Liquids.ozone, 4.0 / 60.0, Liquids.hydrogen, 6.0 / 60.0)
+        Blocks.electrolyzer.liquidOutputDirections = [1, 3]
+        
+        Blocks.atmosphericConcentrator = HeatCrafter("atmospheric-concentrator")
+        Blocks.atmosphericConcentrator.setRequirements(Category.crafting, ItemStack.with_items(Items.oxide, 60, Items.beryllium, 180, Items.silicon, 150))
+        Blocks.atmosphericConcentrator.size = 3
+        Blocks.atmosphericConcentrator.hasLiquids = True
+        Blocks.atmosphericConcentrator.liquidCapacity = 40.0
+        Blocks.atmosphericConcentrator.itemCapacity = 0
+        Blocks.atmosphericConcentrator.consumePower(2.0)
+        # Blocks.atmosphericConcentrator.ambientSound = Sounds.extractLoop
+        Blocks.atmosphericConcentrator.ambientSoundVolume = 0.06
+        Blocks.atmosphericConcentrator.heatRequirement = 6.0
+        Blocks.atmosphericConcentrator.outputLiquid = LiquidStack(Liquids.nitrogen, 4.0 / 60.0)
+        Blocks.atmosphericConcentrator.researchCostMultiplier = 1.1
+        Blocks.atmosphericConcentrator.researchCost = ItemStack.with_items(Items.silicon, 2000, Items.oxide, 900, Items.beryllium, 2400)
+        # Blocks.atmosphericConcentrator.drawer = DrawMulti(DrawRegion("-bottom"), DrawLiquidTile(Liquids.nitrogen, 4.1), DrawDefault(), DrawHeatInput(), DrawParticles(color=Color.valueOf("d4f0ff"), alpha=0.6, particleSize=4.0, particles=10, particleRad=12.0, particleLife=140.0))
+        
+        Blocks.oxidationChamber = HeatProducer("oxidation-chamber")
+        Blocks.oxidationChamber.setRequirements(Category.crafting, ItemStack.with_items(Items.tungsten, 120, Items.graphite, 80, Items.silicon, 100, Items.beryllium, 120))
+        Blocks.oxidationChamber.size = 3
+        Blocks.oxidationChamber.outputItem = ItemStack(Items.oxide, 1)
+        Blocks.oxidationChamber.researchCostMultiplier = 1.1
+        Blocks.oxidationChamber.consumeLiquid(Liquids.ozone, 2.0 / 60.0)
+        Blocks.oxidationChamber.consumeItem(Items.beryllium)
+        Blocks.oxidationChamber.consumePower(0.5)
+        Blocks.oxidationChamber.rotateDraw = False
+        # Blocks.oxidationChamber.drawer = DrawMulti(DrawRegion("-bottom"), DrawLiquidRegion(), DrawDefault(), DrawHeatOutput())
+        # Blocks.oxidationChamber.ambientSound = Sounds.extractLoop
+        Blocks.oxidationChamber.ambientSoundVolume = 0.08
+        Blocks.oxidationChamber.regionRotated1 = 2
+        Blocks.oxidationChamber.craftTime = 60.0 * 2.0
+        Blocks.oxidationChamber.liquidCapacity = 30.0
+        Blocks.oxidationChamber.heatOutput = 5.0
+        
+        Blocks.electricHeater = HeatProducer("electric-heater")
+        Blocks.electricHeater.setRequirements(Category.crafting, ItemStack.with_items(Items.tungsten, 30, Items.oxide, 30, Items.beryllium, 30))
+        Blocks.electricHeater.researchCostMultiplier = 4.0
+        # Blocks.electricHeater.drawer = DrawMulti(DrawDefault(), DrawHeatOutput())
+        Blocks.electricHeater.rotateDraw = False
+        Blocks.electricHeater.size = 2
+        Blocks.electricHeater.heatOutput = 3.0
+        Blocks.electricHeater.regionRotated1 = 1
+        # Blocks.electricHeater.ambientSound = Sounds.hum
+        Blocks.electricHeater.itemCapacity = 0
+        Blocks.electricHeater.consumePower(100.0 / 60.0)
+
+        Blocks.slagHeater = HeatProducer("slag-heater")
+        Blocks.slagHeater.setRequirements(Category.crafting, ItemStack.with_items(Items.tungsten, 50, Items.oxide, 20, Items.beryllium, 20))
+        Blocks.slagHeater.researchCostMultiplier = 4.0
+        # Blocks.slagHeater.drawer = DrawMulti(DrawRegion("-bottom"), DrawLiquidTile(Liquids.slag), DrawDefault(), DrawHeatOutput())
+        Blocks.slagHeater.size = 3
+        Blocks.slagHeater.itemCapacity = 0
+        Blocks.slagHeater.liquidCapacity = 40.0
+        Blocks.slagHeater.rotateDraw = False
+        Blocks.slagHeater.regionRotated1 = 1
+        # Blocks.slagHeater.ambientSound = Sounds.hum
+        Blocks.slagHeater.consumeLiquid(Liquids.slag, 40.0 / 60.0)
+        Blocks.slagHeater.heatOutput = 8.0
+        Blocks.slagHeater.researchCost = ItemStack.with_items(Items.tungsten, 1200, Items.oxide, 900, Items.beryllium, 2400)
+
+        Blocks.phaseHeater = HeatProducer("phase-heater")
+        Blocks.phaseHeater.setRequirements(Category.crafting, ItemStack.with_items(Items.oxide, 30, Items.carbide, 30, Items.beryllium, 30))
+        # Blocks.phaseHeater.drawer = DrawMulti(DrawDefault(), DrawHeatOutput())
+        Blocks.phaseHeater.size = 2
+        Blocks.phaseHeater.heatOutput = 15.0
+        Blocks.phaseHeater.craftTime = 60.0 * 8.0
+        # Blocks.phaseHeater.ambientSound = Sounds.hum
+        Blocks.phaseHeater.consumeItem(Items.phaseFabric)
+
+        Blocks.heatRedirector = HeatConductor("heat-redirector")
+        Blocks.heatRedirector.setRequirements(Category.crafting, ItemStack.with_items(Items.tungsten, 10, Items.graphite, 10))
+        Blocks.heatRedirector.researchCostMultiplier = 10.0
+        Blocks.heatRedirector.group = BlockGroup.heat
+        Blocks.heatRedirector.size = 3
+        # Blocks.heatRedirector.drawer = DrawMulti(DrawDefault(), DrawHeatOutput(), DrawHeatInput("-heat"))
+        Blocks.heatRedirector.regionRotated1 = 1
+
+        Blocks.smallHeatRedirector = HeatConductor("small-heat-redirector")
+        Blocks.smallHeatRedirector.setRequirements(Category.crafting, ItemStack.with_items(Items.surgeAlloy, 10, Items.graphite, 10))
+        Blocks.smallHeatRedirector.researchCostMultiplier = 10.0
+        Blocks.smallHeatRedirector.group = BlockGroup.heat
+        Blocks.smallHeatRedirector.size = 2
+        # Blocks.smallHeatRedirector.drawer = DrawMulti(DrawDefault(), DrawHeatOutput(), DrawHeatInput("-heat"))
+        Blocks.smallHeatRedirector.regionRotated1 = 1
+
+        Blocks.heatRouter = HeatConductor("heat-router")
+        Blocks.heatRouter.setRequirements(Category.crafting, ItemStack.with_items(Items.tungsten, 15, Items.graphite, 10))
+        Blocks.heatRouter.researchCostMultiplier = 10.0
+        Blocks.heatRouter.group = BlockGroup.heat
+        Blocks.heatRouter.size = 3
+        # Blocks.heatRouter.drawer = DrawMulti(DrawDefault(), DrawHeatOutput(-1, False), DrawHeatOutput(), DrawHeatOutput(1, False), DrawHeatInput("-heat"))
+        Blocks.heatRouter.regionRotated1 = 1
+        Blocks.heatRouter.splitHeat = True
+        
+        Blocks.slagIncinerator = ItemIncinerator("slag-incinerator")
+        Blocks.slagIncinerator.setRequirements(Category.crafting, ItemStack.with_items(Items.tungsten, 15))
+        Blocks.slagIncinerator.size = 1
+        Blocks.slagIncinerator.consumeLiquid(Liquids.slag, 0.0)
+        
+        Blocks.carbideCrucible = HeatCrafter("carbide-crucible")
+        Blocks.carbideCrucible.setRequirements(Category.crafting, ItemStack.with_items(Items.tungsten, 110, Items.thorium, 150, Items.oxide, 60))
+        # Blocks.carbideCrucible.craftEffect = Fx.none
+        Blocks.carbideCrucible.outputItem = ItemStack(Items.carbide, 1)
+        Blocks.carbideCrucible.craftTime = 135.0
+        Blocks.carbideCrucible.size = 3
+        Blocks.carbideCrucible.itemCapacity = 20
+        Blocks.carbideCrucible.hasPower = True
+        Blocks.carbideCrucible.hasItems = True
+        # Blocks.carbideCrucible.drawer = DrawMulti(DrawRegion("-bottom"), DrawCrucibleFlame(), DrawDefault(), DrawHeatInput())
+        # Blocks.carbideCrucible.ambientSound = Sounds.smelter
+        Blocks.carbideCrucible.ambientSoundVolume = 0.09
+        Blocks.carbideCrucible.heatRequirement = 10.0
+        Blocks.carbideCrucible.consumeItems(ItemStack.with_items(Items.tungsten, 2, Items.graphite, 3))
+        Blocks.carbideCrucible.consumePower(2.0)
+
+        Blocks.slagCentrifuge = GenericCrafter("slag-centrifuge")
+        Blocks.slagCentrifuge.setRequirements(Category.crafting, BuildVisibility.debugOnly, ItemStack.with_items(Items.carbide, 70, Items.graphite, 60, Items.silicon, 40, Items.oxide, 40))
+        Blocks.slagCentrifuge.consumePower(2.0 / 60.0)
+        Blocks.slagCentrifuge.size = 3
+        Blocks.slagCentrifuge.consumeItem(Items.sand, 1)
+        Blocks.slagCentrifuge.consumeLiquid(Liquids.slag, 40.0 / 60.0)
+        Blocks.slagCentrifuge.liquidCapacity = 80.0
+        # Blocks.slagCentrifuge.drawer = DrawMulti(DrawRegion("-bottom"), DrawLiquidRegion(Liquids.slag, alpha=0.7), DrawGlowRegion(-1.0, glowIntensity=0.3, rotateSpeed=3.0, alpha=0.4, color=Color(1.0, 0.5, 0.5, 1.0)), DrawDefault())
+        Blocks.slagCentrifuge.craftTime = 120.0
+        Blocks.slagCentrifuge.outputLiquid = LiquidStack(Liquids.gallium, 1.0 / 60.0)
+
+        Blocks.surgeCrucible = HeatCrafter("surge-crucible")
+        Blocks.surgeCrucible.setRequirements(Category.crafting, ItemStack.with_items(Items.silicon, 100, Items.graphite, 80, Items.tungsten, 80, Items.oxide, 80))
+        Blocks.surgeCrucible.size = 3
+        Blocks.surgeCrucible.itemCapacity = 20
+        Blocks.surgeCrucible.heatRequirement = 10.0
+        Blocks.surgeCrucible.craftTime = 180.0
+        Blocks.surgeCrucible.liquidCapacity = 400.0
+        # Blocks.surgeCrucible.ambientSound = Sounds.smelter
+        Blocks.surgeCrucible.ambientSoundVolume = 0.9
+        Blocks.surgeCrucible.outputItem = ItemStack(Items.surgeAlloy, 1)
+        # Blocks.surgeCrucible.craftEffect = RadialEffect(Fx.surgeCruciSmoke, 4, 90.0, 5.0)
+        # Blocks.surgeCrucible.drawer = DrawMulti(DrawRegion("-bottom"), DrawCircles(color=Color.valueOf("ffc073").a(0.24), strokeMax=2.5, radius=10.0, amount=3), DrawLiquidRegion(Liquids.slag), DrawDefault(), DrawHeatInput(), DrawHeatRegion(color=Color.valueOf("ff6060ff")), DrawHeatRegion("-vents", color.a=1.0))
+        Blocks.surgeCrucible.consumeItem(Items.silicon, 3)
+        Blocks.surgeCrucible.consumeLiquid(Liquids.slag, 40.0 / 60.0)
+        Blocks.surgeCrucible.consumePower(2.0)
+
+        Blocks.cyanogenSynthesizer = HeatCrafter("cyanogen-synthesizer")
+        Blocks.cyanogenSynthesizer.setRequirements(Category.crafting, ItemStack.with_items(Items.carbide, 50, Items.silicon, 80, Items.beryllium, 90))
+        Blocks.cyanogenSynthesizer.heatRequirement = 5.0
+        # Blocks.cyanogenSynthesizer.drawer = DrawMulti(DrawRegion("-bottom"), DrawLiquidTile(Liquids.cyanogen), DrawParticles(color=Color.valueOf("89e8b6"), alpha=0.5, particleSize=3.0, particles=10, particleRad=9.0, particleLife=200.0, reverse=True, particleSizeInterp=Interp.one), DrawDefault(), DrawHeatInput(), DrawHeatRegion("-heat-top"))
+        Blocks.cyanogenSynthesizer.size = 3
+        # Blocks.cyanogenSynthesizer.ambientSound = Sounds.extractLoop
+        Blocks.cyanogenSynthesizer.ambientSoundVolume = 0.08
+        Blocks.cyanogenSynthesizer.liquidCapacity = 80.0
+        Blocks.cyanogenSynthesizer.outputLiquid = LiquidStack(Liquids.cyanogen, 3.0 / 60.0)
+        Blocks.cyanogenSynthesizer.consumeLiquid(Liquids.arkycite, 40.0 / 60.0)
+        Blocks.cyanogenSynthesizer.consumeItem(Items.graphite)
+        Blocks.cyanogenSynthesizer.consumePower(2.0)
+
+        Blocks.phaseSynthesizer = HeatCrafter("phase-synthesizer")
+        Blocks.phaseSynthesizer.setRequirements(Category.crafting, ItemStack.with_items(Items.carbide, 90, Items.silicon, 100, Items.thorium, 100, Items.tungsten, 200))
+        Blocks.phaseSynthesizer.size = 3
+        Blocks.phaseSynthesizer.itemCapacity = 40
+        Blocks.phaseSynthesizer.heatRequirement = 8.0
+        Blocks.phaseSynthesizer.craftTime = 120.0
+        Blocks.phaseSynthesizer.liquidCapacity = 40.0
+        # Blocks.phaseSynthesizer.ambientSound = Sounds.techloop
+        Blocks.phaseSynthesizer.ambientSoundVolume = 0.04
+        Blocks.phaseSynthesizer.outputItem = ItemStack(Items.phaseFabric, 1)
+        # Blocks.phaseSynthesizer.drawer = DrawMulti(DrawRegion("-bottom"), DrawSpikes(color=Color.valueOf("ffd59e"), stroke=1.5, layers=2, amount=12, rotateSpeed=0.5, layerSpeed=-0.9), DrawMultiWeave(glowColor=Color(1.0, 0.4, 0.4, 0.8)), DrawDefault(), DrawHeatInput(), DrawHeatRegion("-vents", color=Color(1.0, 0.4, 0.3, 1.0)))
+        Blocks.phaseSynthesizer.consumeItems(ItemStack.with_items(Items.thorium, 2, Items.sand, 6))
+        Blocks.phaseSynthesizer.consumeLiquid(Liquids.ozone, 2.0 / 60.0)
+        Blocks.phaseSynthesizer.consumePower(8.0)
+
+        Blocks.heatReactor = HeatProducer("heat-reactor")
+        Blocks.heatReactor.setRequirements(Category.crafting, BuildVisibility.debugOnly, ItemStack.with_items(Items.oxide, 70, Items.graphite, 20, Items.carbide, 10, Items.thorium, 80))
+        Blocks.heatReactor.size = 3
+        Blocks.heatReactor.craftTime = 600.0
+        # Blocks.heatReactor.craftEffect = RadialEffect(Fx.heatReactorSmoke, 4, 90.0, 7.0)
+        Blocks.heatReactor.itemCapacity = 20
+        Blocks.heatReactor.outputItem = ItemStack(Items.fissileMatter, 1)
+        Blocks.heatReactor.consumeItem(Items.thorium, 3)
+        Blocks.heatReactor.consumeLiquid(Liquids.nitrogen, 1.0 / 60.0)
+        
+        # region defense
+        wallHealthMultiplier:int = 4
+        
+        Blocks.copperWall = Wall("copper-wall")
+        Blocks.copperWall.requirements = Category.defense, ItemStack.with_items(Items.copper, 6)
+        Blocks.copperWall.health = 80 * wallHealthMultiplier
+        Blocks.copperWall.researchCostMultiplier = 0.1
+
+        Blocks.copperWallLarge = Wall("copper-wall-large")
+        Blocks.copperWallLarge.requirements = Category.defense, ItemStack.mult(Blocks.copperWall.requirements, 4)
+        Blocks.copperWallLarge.health = 80 * 4 * wallHealthMultiplier
+        Blocks.copperWallLarge.size = 2
+
+        Blocks.titaniumWall = Wall("titanium-wall")
+        Blocks.titaniumWall.requirements = Category.defense, ItemStack.with_items(Items.titanium, 6)
+        Blocks.titaniumWall.health = 110 * wallHealthMultiplier
+
+        Blocks.titaniumWallLarge = Wall("titanium-wall-large")
+        Blocks.titaniumWallLarge.requirements = Category.defense, ItemStack.ItemStack.mult(Blocks.titaniumWall.requirements, 4)
+        Blocks.titaniumWallLarge.health = 110 * wallHealthMultiplier * 4
+        Blocks.titaniumWallLarge.size = 2
+
+        Blocks.plastaniumWall = Wall("plastanium-wall")
+        Blocks.plastaniumWall.requirements = Category.defense, ItemStack.with_items(Items.plastanium, 5, Items.metaglass, 2)
+        Blocks.plastaniumWall.health = 125 * wallHealthMultiplier
+        Blocks.plastaniumWall.insulated = True
+        Blocks.plastaniumWall.absorbLasers = True
+        Blocks.plastaniumWall.schematicPriority = 10
+
+        Blocks.plastaniumWallLarge = Wall("plastanium-wall-large")
+        Blocks.plastaniumWallLarge.requirements = Category.defense, ItemStack.mult(Blocks.plastaniumWall.requirements, 4)
+        Blocks.plastaniumWallLarge.health = 125 * wallHealthMultiplier * 4
+        Blocks.plastaniumWallLarge.size = 2
+        Blocks.plastaniumWallLarge.insulated = True
+        Blocks.plastaniumWallLarge.absorbLasers = True
+        Blocks.plastaniumWallLarge.schematicPriority = 10
+
+        Blocks.thoriumWall = Wall("thorium-wall")
+        Blocks.thoriumWall.requirements = Category.defense, ItemStack.with_items(Items.thorium, 6)
+        Blocks.thoriumWall.health = 200 * wallHealthMultiplier
+
+        Blocks.thoriumWallLarge = Wall("thorium-wall-large")
+        Blocks.thoriumWallLarge.requirements = Category.defense, ItemStack.mult(Blocks.thoriumWall.requirements, 4)
+        Blocks.thoriumWallLarge.health = 200 * wallHealthMultiplier * 4
+        Blocks.thoriumWallLarge.size = 2
+
+        Blocks.phaseWall = Wall("phase-wall")
+        Blocks.phaseWall.requirements = Category.defense, ItemStack.with_items(Items.phaseFabric, 6)
+        Blocks.phaseWall.health = 150 * wallHealthMultiplier
+        Blocks.phaseWall.chanceDeflect = 10.0
+        Blocks.phaseWall.flashHit = True
+
+        Blocks.phaseWallLarge = Wall("phase-wall-large")
+        Blocks.phaseWallLarge.requirements = Category.defense, ItemStack.mult(Blocks.phaseWall.requirements, 4)
+        Blocks.phaseWallLarge.health = 150 * 4 * wallHealthMultiplier
+        Blocks.phaseWallLarge.size = 2
+        Blocks.phaseWallLarge.chanceDeflect = 10.0
+        Blocks.phaseWallLarge.flashHit = True
+
+        Blocks.surgeWall = Wall("surge-wall")
+        Blocks.surgeWall.requirements = Category.defense, ItemStack.with_items(Items.surgeAlloy, 6)
+        Blocks.surgeWall.health = 230 * wallHealthMultiplier
+        Blocks.surgeWall.lightningChance = 0.05
+
+        Blocks.surgeWallLarge = Wall("surge-wall-large")
+        Blocks.surgeWallLarge.requirements = Category.defense, ItemStack.mult(Blocks.surgeWall.requirements, 4)
+        Blocks.surgeWallLarge.health = 230 * 4 * wallHealthMultiplier
+        Blocks.surgeWallLarge.size = 2
+        Blocks.surgeWallLarge.lightningChance = 0.05
+        
+        Blocks.door = Door("door")
+        Blocks.door.requirements = Category.defense, ItemStack.with_items(Items.titanium, 6, Items.silicon, 4)
+        Blocks.door.health = 100 * wallHealthMultiplier
+
+        Blocks.doorLarge = Door("door-large")
+        Blocks.doorLarge.requirements = Category.defense, ItemStack.mult(Blocks.door.requirements, 4)
+        # Blocks.doorLarge.openfx = Fx.dooropenlarge
+        # Blocks.doorLarge.closefx = Fx.doorcloselarge
+        Blocks.doorLarge.health = 100 * 4 * wallHealthMultiplier
+        Blocks.doorLarge.size = 2
+
+        Blocks.scrapWall = Wall("scrap-wall")
+        Blocks.scrapWall.requirements = Category.defense, ItemStack.with_items(Items.scrap, 6)
+        Blocks.scrapWall.health = 60 * wallHealthMultiplier
+        Blocks.scrapWall.variants = 5
+        Blocks.scrapWall.buildCostMultiplier = 4.0
+
+        Blocks.scrapWallLarge = Wall("scrap-wall-large")
+        Blocks.scrapWallLarge.requirements = Category.defense, ItemStack.mult(Blocks.scrapWall.requirements, 4)
+        Blocks.scrapWallLarge.health = 60 * 4 * wallHealthMultiplier
+        Blocks.scrapWallLarge.size = 2
+        Blocks.scrapWallLarge.variants = 4
+        Blocks.scrapWallLarge.buildCostMultiplier = 4.0
+
+        Blocks.scrapWallHuge = Wall("scrap-wall-huge")
+        Blocks.scrapWallHuge.requirements = Category.defense, ItemStack.mult(Blocks.scrapWall.requirements, 9)
+        Blocks.scrapWallHuge.health = 60 * 9 * wallHealthMultiplier
+        Blocks.scrapWallHuge.size = 3
+        Blocks.scrapWallHuge.variants = 3
+        Blocks.scrapWallHuge.buildCostMultiplier = 4.0
+
+        Blocks.scrapWallGigantic = Wall("scrap-wall-gigantic")
+        Blocks.scrapWallGigantic.requirements = Category.defense, ItemStack.mult(Blocks.scrapWall.requirements, 16)
+        Blocks.scrapWallGigantic.health = 60 * 16 * wallHealthMultiplier
+        Blocks.scrapWallGigantic.size = 4
+        Blocks.scrapWallGigantic.buildCostMultiplier = 4.0
+        
+        Blocks.thruster = Thruster("thruster")
+        Blocks.thruster.requirements = Category.defense, BuildVisibility.sandboxOnly, ItemStack.with_items(Items.scrap, 96)
+        Blocks.thruster.health = 55 * 16 * wallHealthMultiplier
+        Blocks.thruster.size = 4
+
+        Blocks.berylliumWall = Wall("beryllium-wall")
+        Blocks.berylliumWall.requirements = Category.defense, ItemStack.with_items(Items.beryllium, 6)
+        Blocks.berylliumWall.health = 130 * wallHealthMultiplier
+        Blocks.berylliumWall.armor = 2.0
+        Blocks.berylliumWall.buildCostMultiplier = 8.0
+
+        Blocks.berylliumWallLarge = Wall("beryllium-wall-large")
+        Blocks.berylliumWallLarge.requirements = Category.defense, ItemStack.mult(Blocks.berylliumWall.requirements, 4)
+        Blocks.berylliumWallLarge.health = 130 * wallHealthMultiplier * 4
+        Blocks.berylliumWallLarge.armor = 2.0
+        Blocks.berylliumWallLarge.buildCostMultiplier = 5.0
+        Blocks.berylliumWallLarge.size = 2
+
+        Blocks.tungstenWall = Wall("tungsten-wall")
+        Blocks.tungstenWall.requirements = Category.defense, ItemStack.with_items(Items.tungsten, 6)
+        Blocks.tungstenWall.health = 180 * wallHealthMultiplier
+        Blocks.tungstenWall.armor = 14.0
+        Blocks.tungstenWall.buildCostMultiplier = 8.0
+
+        Blocks.tungstenWallLarge = Wall("tungsten-wall-large")
+        Blocks.tungstenWallLarge.requirements = Category.defense, ItemStack.mult(Blocks.tungstenWall.requirements, 4)
+        Blocks.tungstenWallLarge.health = 180 * wallHealthMultiplier * 4
+        Blocks.tungstenWallLarge.armor = 14.0
+        Blocks.tungstenWallLarge.buildCostMultiplier = 5.0
+        Blocks.tungstenWallLarge.size = 2
+        
+        Blocks.blastDoor = AutoDoor("blast-door")
+        Blocks.blastDoor.requirements = Category.defense, ItemStack.with_items(Items.tungsten, 24, Items.silicon, 24)
+        Blocks.blastDoor.health = 175 * wallHealthMultiplier * 4
+        Blocks.blastDoor.armor = 14.0
+        Blocks.blastDoor.size = 2
+
+        Blocks.reinforcedSurgeWall = Wall("reinforced-surge-wall")
+        Blocks.reinforcedSurgeWall.requirements = Category.defense, ItemStack.with_items(Items.surgeAlloy, 6, Items.tungsten, 2)
+        Blocks.reinforcedSurgeWall.health = 250 * wallHealthMultiplier
+        Blocks.reinforcedSurgeWall.lightningChance = 0.05
+        Blocks.reinforcedSurgeWall.lightningDamage = 30.0
+        Blocks.reinforcedSurgeWall.armor = 20.0
+        Blocks.reinforcedSurgeWall.researchCost = ItemStack.with_items(Items.surgeAlloy, 20, Items.tungsten, 100)
+
+        Blocks.reinforcedSurgeWallLarge = Wall("reinforced-surge-wall-large")
+        Blocks.reinforcedSurgeWallLarge.requirements = Category.defense, ItemStack.mult(Blocks.reinforcedSurgeWall.requirements, 4)
+        Blocks.reinforcedSurgeWallLarge.health = 250 * wallHealthMultiplier * 4
+        Blocks.reinforcedSurgeWallLarge.lightningChance = 0.05
+        Blocks.reinforcedSurgeWallLarge.lightningDamage = 30.0
+        Blocks.reinforcedSurgeWallLarge.armor = 20.0
+        Blocks.reinforcedSurgeWallLarge.size = 2
+        Blocks.reinforcedSurgeWallLarge.researchCost = ItemStack.with_items(Items.surgeAlloy, 40, Items.tungsten, 200)
+
+        Blocks.carbideWall = Wall("carbide-wall")
+        Blocks.carbideWall.requirements = Category.defense, ItemStack.with_items(Items.thorium, 6, Items.carbide, 6)
+        Blocks.carbideWall.health = 270 * wallHealthMultiplier
+        Blocks.carbideWall.armor = 16.0
+
+        Blocks.carbideWallLarge = Wall("carbide-wall-large")
+        Blocks.carbideWallLarge.requirements = Category.defense, ItemStack.mult(Blocks.carbideWall.requirements, 4)
+        Blocks.carbideWallLarge.health = 270 * wallHealthMultiplier * 4
+        Blocks.carbideWallLarge.armor = 16.0
+        Blocks.carbideWallLarge.size = 2
+        
+        Blocks.shieldedWall = ShieldWall("shielded-wall")
+        Blocks.shieldedWall.requirements = Category.defense, ItemStack.with_items(Items.phaseFabric, 20, Items.surgeAlloy, 12, Items.beryllium, 12)
+        Blocks.shieldedWall.consumePower(3.0 / 60.0)
+        Blocks.shieldedWall.outputsPower = False
+        Blocks.shieldedWall.hasPower = True
+        Blocks.shieldedWall.consumesPower = True
+        Blocks.shieldedWall.conductivePower = True
+        Blocks.shieldedWall.chanceDeflect = 8.0
+        Blocks.shieldedWall.health = 260 * wallHealthMultiplier * 4
+        Blocks.shieldedWall.armor = 15.0
+        Blocks.shieldedWall.size = 2
+        
+        Blocks.mender = MendProjector("mender")
+        Blocks.mender.setRequirements(Category.effect, ItemStack.with_items(Items.lead, 30, Items.copper, 25))
+        Blocks.mender.consumePower(0.3)
+        Blocks.mender.size = 1
+        Blocks.mender.reload = 200.0
+        Blocks.mender.range = 40.0
+        Blocks.mender.healPercent = 4.0
+        Blocks.mender.phaseBoost = 4.0
+        Blocks.mender.phaseRangeBoost = 20.0
+        Blocks.mender.health = 80
+        Blocks.mender.consumeItem(Items.silicon).boost()
+
+        Blocks.mendProjector = MendProjector("mend-projector")
+        Blocks.mendProjector.setRequirements(Category.effect, ItemStack.with_items(Items.lead, 100, Items.titanium, 25, Items.silicon, 40, Items.copper, 50))
+        Blocks.mendProjector.consumePower(1.5)
+        Blocks.mendProjector.size = 2
+        Blocks.mendProjector.reload = 250.0
+        Blocks.mendProjector.range = 85.0
+        Blocks.mendProjector.healPercent = 11.0
+        Blocks.mendProjector.phaseBoost = 15.0
+        Blocks.mendProjector.scaledHealth = 80
+        Blocks.mendProjector.consumeItem(Items.phaseFabric).boost()
         
         
