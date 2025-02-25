@@ -1,5 +1,5 @@
-from mindustry.world.block import Block
 from mindustry.graphics import *
+from mindustry.world import *
 
 class TallBlock(Block):
     shadowOffset:float = -3.0

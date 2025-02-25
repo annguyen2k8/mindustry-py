@@ -1,6 +1,6 @@
-from mindustry.world.meta import *
+from . import *
 
-from .generic_crafter import GenericCrafter
+from mindustry.world.meta import *
 
 class AttributeCrafter(GenericCrafter):
     attribute:Attribute = Attribute.heat

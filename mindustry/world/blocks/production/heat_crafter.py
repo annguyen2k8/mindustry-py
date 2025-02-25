@@ -1,4 +1,4 @@
-from .generic_crafter import GenericCrafter
+from . import *
 
 class HeatCrafter(GenericCrafter):
     heatRequirement:float = 10.0

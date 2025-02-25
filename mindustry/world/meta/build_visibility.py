@@ -1,10 +1,8 @@
 from __future__ import annotations
 
-from mindustry.vars import Vars
-
-
 from mindustry.content import *
-#!                            ^^^^^^
+
+from mindustry.vars import *
 
 class BuildVisibility:
     hidden:BuildVisibility

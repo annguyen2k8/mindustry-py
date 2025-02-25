@@ -1,7 +1,7 @@
+from mindustry.world import *
 from mindustry.world.meta import *
 from mindustry.world.consumer import *
 
-from ...block import Block
 
 class ForceProjector(Block):
     phaseUseTime:float = 350.0

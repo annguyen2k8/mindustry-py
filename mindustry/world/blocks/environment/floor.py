@@ -1,9 +1,9 @@
 from __future__ import annotations
 from typing import *
 
-from mindustry.world.block import *
 from mindustry.content import *
 from mindustry.type import *
+from mindustry.world import *
 
 class Floor(Block):
     edge:str = 'stone'

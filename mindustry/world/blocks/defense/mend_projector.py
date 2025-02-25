@@ -1,6 +1,5 @@
+from mindustry.world import *
 from mindustry.graphics import *
-
-from ...block import *
 
 class MendProjector(Block):
     baseColor:Color = Color.valueOf("84f491")

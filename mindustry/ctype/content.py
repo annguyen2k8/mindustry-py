@@ -1,6 +1,6 @@
 from . import *
 
-from mindustry.core import *
+from mindustry import *
 
 class Content:
     id:int

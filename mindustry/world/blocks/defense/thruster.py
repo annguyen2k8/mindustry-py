@@ -1,4 +1,4 @@
-from .wall import Wall
+from . import *
 
 class Thruster(Wall):
     def __init__(self, name):

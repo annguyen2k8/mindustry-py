@@ -1,8 +1,9 @@
-from mindustry.world.meta import *
+from . import *
+
 from mindustry.graphics import *
 from mindustry.type import *
+from mindustry.world.meta import *
 
-from .base_turret import BaseTurret
 
 class BuildTurret(BaseTurret):
     targetInterval:int = 15

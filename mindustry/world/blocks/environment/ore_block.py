@@ -1,6 +1,6 @@
-from mindustry.type import *
+from . import *
 
-from .overlay_floor import OverlayFloor
+from mindustry.type import *
 
 class OreBlock(OverlayFloor):
     def __init__(self, name:str=None, ore:Item=None):

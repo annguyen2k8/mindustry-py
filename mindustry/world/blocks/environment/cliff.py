@@ -1,4 +1,4 @@
-from mindustry.world.block import *
+from mindustry.world import *
 
 class Cliff(Block):
     def __init__(self, name):

@@ -1,4 +1,4 @@
-from ..block import Block
+from mindustry.content import *
 
 class ConstructBlock(Block):
     def __init__(self, size:int):

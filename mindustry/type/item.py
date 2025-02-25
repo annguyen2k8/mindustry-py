@@ -1,5 +1,4 @@
 from mindustry.graphics import *
-
 from mindustry.ctype import *
 
 class Item(UnblockableContent):

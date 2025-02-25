@@ -1,11 +1,11 @@
 from typing import *
 
-from mindustry.content.blocks import *
-from mindustry.graphics import *
-from mindustry.world import *
-from mindustry.math import *
+from . import *
 
-from .floor import Floor
+from mindustry.content import *
+from mindustry.graphics import *
+from mindustry.math import *
+from mindustry.world import *
 
 class SteamVent(Floor):
     offsets: List[Point2] = [

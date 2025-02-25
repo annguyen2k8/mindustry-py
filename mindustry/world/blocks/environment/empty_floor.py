@@ -1,4 +1,5 @@
-from .floor import Floor
+from . import *
+
 class EmptyFloor(Floor):
     def __init__(self, name):
         super().__init__(name)

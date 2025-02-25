@@ -1,4 +1,4 @@
-from .overlay_floor import OverlayFloor
+from . import *
 
 class RemoveOre(OverlayFloor):
     def __init__(self, name):

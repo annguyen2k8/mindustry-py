@@ -1,6 +1,5 @@
 from mindustry.graphics import *
-
-from ...block import Block
+from mindustry.world import *
 
 class Incinerator(Block):
     flameColor:Color = Color.valueOf("ffad9d")
@@ -11,4 +10,3 @@ class Incinerator(Block):
         self.hasLiquids = True
         self.update = True
         self.solid = True
-    

@@ -1,7 +1,8 @@
 from typing import *
 
-from mindustry.type.item_stack import ItemStack
-from .consume import Consume
+from . import *
+
+from mindustry.type import *
 
 class ConsumeItems(Consume):
     items:List[ItemStack] = []

@@ -1,8 +1,9 @@
 from typing import *
 
+from . import *
+
 from mindustry.type import *
 
-from .consume import Consume
 
 class ConsumeLiquids(Consume):
     liquids:List[LiquidStack] = []

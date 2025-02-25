@@ -1,4 +1,4 @@
-from ..meta import *
+from mindustry.world.meta import *
 
 class Attributes:
     arr:List[float] = [0.0] * len(Attribute.all_attr)

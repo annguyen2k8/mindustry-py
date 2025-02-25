@@ -4,5 +4,6 @@ from .block_group import *
 from .build_visibility import *
 from .env import *
 from .stat_cat import *
+from .stat_value import *
 from .stat import *
 from .stats import *

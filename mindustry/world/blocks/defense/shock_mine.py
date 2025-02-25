@@ -1,6 +1,5 @@
 from mindustry.graphics import *
-
-from ...block import Block
+from mindustry.world import *
 
 class ShockMine(Block):
     cooldown:float = 80.0

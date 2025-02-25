@@ -1,7 +1,7 @@
-from mindustry.entities import *
+from . import *
 
-from .reload_turret import ReloadTurret
-from ....block import Block
+from mindustry.entities import *
+from mindustry.world import Block
 
 class Turret(ReloadTurret):
     logicControlCooldown:float = 60 * 2

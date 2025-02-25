@@ -1,7 +1,6 @@
 from mindustry.type import *
+from mindustry.world import *
 from mindustry.world.meta import *
-
-from ...block import Block
 
 class DirectionalForceProjector(Block):
     width:float = 30.0

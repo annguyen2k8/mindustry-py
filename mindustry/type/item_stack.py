@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import *
 
-from .item import *
+from . import *
 
 from mindustry.content.items import Items
 

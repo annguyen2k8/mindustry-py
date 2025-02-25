@@ -1,4 +1,4 @@
-from .consume import Consume
+from . import *
 
 class ConsumePower(Consume):
     usage:float

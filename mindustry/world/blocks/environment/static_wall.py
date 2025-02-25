@@ -1,6 +1,6 @@
-from mindustry.graphics import *
+from . import *
 
-from .prop import Prop
+from mindustry.graphics import *
 
 class StaticWall(Prop):
     def __init__(self, name):

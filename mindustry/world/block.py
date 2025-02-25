@@ -5,9 +5,21 @@ from mindustry.world.meta import *
 from mindustry.graphics import *
 from mindustry.type import *
 
-from mindustry.ctype.unlockable_content import UnblockableContent
-from .blocks.attributes import Attributes
-# from .blocks.environment.floor import Floor
+from mindustry.content import *
+from mindustry.core import *
+from mindustry.ctype import *
+from mindustry.entities import *
+from mindustry.game import *
+from mindustry.graphics import *
+from mindustry.type import *
+from mindustry.world import *
+from mindustry.world.blocks import *
+from mindustry.world.blocks.environment import *
+from mindustry.world.blocks.power import *
+from mindustry.world.consumer import *
+from mindustry.world.meta import *
+
+from mindustry.vars import *
 
 class Block(UnblockableContent):
     name:str

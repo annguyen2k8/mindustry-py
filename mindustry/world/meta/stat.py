@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import *
 
-from .stat_cat import StatCat
+from . import *
 
 class Stat:
     allStat:List[Stat] = []

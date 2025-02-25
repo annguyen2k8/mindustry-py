@@ -1,8 +1,6 @@
 from typing import *
 
-from .stat_value import StatValue
-from .stat_cat import StatCat
-from .stat import Stat
+from . import *
 
 class Stats:
     useCategories:bool = False

@@ -1,7 +1,7 @@
-from mindustry.world.meta import *
 from mindustry.entities import *
+from mindustry.world import *
+from mindustry.world.meta import *
 
-from ....block import Block
 
 class BaseTurret(Block):
     def __init__(self, name):

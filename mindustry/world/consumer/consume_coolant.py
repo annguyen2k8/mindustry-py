@@ -1,6 +1,6 @@
-from mindustry.type import *
+from . import *
 
-from .consume_liquid_filter import ConsumeLiquidFilter
+from mindustry.type import *
 
 class ConsumeCoolant(ConsumeLiquidFilter):
     maxTemp:float = 0.5

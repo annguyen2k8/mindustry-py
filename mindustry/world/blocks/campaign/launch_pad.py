@@ -1,4 +1,4 @@
-from ...block import *
+from mindustry.content import *
 
 class LaunchPad(Block):
     def __init__(self, name):

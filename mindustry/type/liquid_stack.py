@@ -1,7 +1,8 @@
 from typing import *
 
-from .liquid import *
-from ..content.liquids import *
+from . import *
+
+from mindustry.content import *
 
 class LiquidStack:
     liquid:Liquid

@@ -3,6 +3,7 @@ from typing import *
 
 from mindustry.content import *
 from mindustry.ctype import *
+from mindustry.io import *
 from mindustry.type import *
 from mindustry.world import *
 from mindustry.vars import *

@@ -1,4 +1,4 @@
-from ...block import Block
+from mindustry.world import *
 
 class HeatConductor(Block):
     visualMaxHeat:float = 15.0

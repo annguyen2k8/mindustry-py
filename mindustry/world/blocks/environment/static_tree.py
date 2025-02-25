@@ -1,4 +1,4 @@
-from .static_wall import StaticWall
+from . import *
 
 class StaticTree(StaticWall):
     def __init__(self, name):

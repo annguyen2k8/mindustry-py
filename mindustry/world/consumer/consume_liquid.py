@@ -1,6 +1,6 @@
-from mindustry.type import *
+from . import *
 
-from .consume_liquid_base import ConsumeLiquidBase
+from mindustry.type import *
 
 class ConsumeLiquid(ConsumeLiquidBase):
     liquid:Liquid

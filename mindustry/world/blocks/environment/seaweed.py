@@ -1,4 +1,4 @@
-from .prop import Prop
+from . import *
 
 class Seaweed(Prop):
     def __init__(self, name):

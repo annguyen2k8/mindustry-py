@@ -1,9 +1,8 @@
 from typing import *
 
-from mindustry.world.meta import *
 from mindustry.graphics import *
-
-from ...block import Block
+from mindustry.world import *
+from mindustry.world.meta import *
 
 class RegenProjector(Block):
     taken:set[int] = set()

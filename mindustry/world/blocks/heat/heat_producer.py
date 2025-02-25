@@ -1,4 +1,4 @@
-from ..production import GenericCrafter
+from mindustry.world.blocks.production import *
 
 class HeatProducer(GenericCrafter):
     heatOutput:float = 10.0

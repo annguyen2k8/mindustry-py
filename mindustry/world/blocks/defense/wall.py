@@ -1,8 +1,7 @@
-from mindustry.world.meta import *
-from mindustry.graphics import *
 from mindustry.entities import *
-
-from ...block import Block
+from mindustry.graphics import *
+from mindustry.world import *
+from mindustry.world.meta import *
 
 class Wall(Block):
     lightningChance:float = -1

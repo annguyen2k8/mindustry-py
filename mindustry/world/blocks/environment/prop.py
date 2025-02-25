@@ -1,5 +1,5 @@
 from mindustry.graphics import *
-from mindustry.world.block import *
+from mindustry.world import *
 
 class Prop(Block):
     layer:float = Layer.blockProp

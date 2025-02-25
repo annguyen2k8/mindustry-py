@@ -1,4 +1,4 @@
-from mindustry.world.block import *
+from mindustry.world import *
 
 class TreeBlock(Block):
     shadowOffset:float = -4.0

@@ -1,7 +1,6 @@
 from mindustry.graphics import *
+from mindustry.world import *
 from mindustry.world.meta import *
-
-from ...block import Block
 
 class ShockwaveTower(Block):
     range:float = 110.0

@@ -1,4 +1,4 @@
-from .prop import Prop
+from . import *
 
 class SeaBush(Prop):
     lobes_min:int = 7

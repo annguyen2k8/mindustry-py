@@ -1,6 +1,7 @@
-from mindustry.content.status_effects import *
+from . import *
+
 from mindustry.graphics import *
-from .status_effect import *
+from mindustry.content import *
 
 class Liquid:
     gas:bool = False

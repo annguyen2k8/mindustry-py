@@ -1,6 +1,6 @@
-from mindustry.world.block import Block
+from . import *
 
-from .floor import Floor
+from mindustry.world import *
 
 class ShallowLiquid(Floor):
     liquidBase:Floor

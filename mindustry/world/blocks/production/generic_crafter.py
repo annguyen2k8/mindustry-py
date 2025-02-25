@@ -1,9 +1,8 @@
 from typing import *
 
-from mindustry.world.meta import *
 from mindustry.type import *
-
-from ...block import Block
+from mindustry.world import *
+from mindustry.world.meta import *
 
 class GenericCrafter(Block):
     outputItem:ItemStack = None

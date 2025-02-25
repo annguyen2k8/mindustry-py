@@ -1,7 +1,6 @@
-from mindustry.world.meta import *
 from mindustry.graphics import *
-
-from ...block import Block
+from mindustry.world import *
+from mindustry.world.meta import *
 
 class Radar(Block):
     iscoveryTime:float = 60.0 * 10.0
