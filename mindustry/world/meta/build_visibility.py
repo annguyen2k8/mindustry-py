@@ -1,7 +1,10 @@
 from __future__ import annotations
 
-from mindustry import Vars
-from mindustry.content import Blocks
+from mindustry.vars import Vars
+
+
+from mindustry.content import *
+#!                            ^^^^^^
 
 class BuildVisibility:
     hidden:BuildVisibility
@@ -15,6 +18,8 @@ class BuildVisibility:
     lightingOnly:BuildVisibility
     ammoOnly:BuildVisibility
     fogOnly:BuildVisibility
+    
+    
     def __init__(self, visible):
         self.visible = visible
 

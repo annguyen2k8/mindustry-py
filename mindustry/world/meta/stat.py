@@ -4,92 +4,92 @@ from typing import *
 from .stat_cat import StatCat
 
 class Stat:
-    all_stat: List[Stat] = []
+    allStat:List[Stat] = []
+    
+    health:Stat
+    armor:Stat
+    size:Stat
+    displaySize:Stat
+    buildTime:Stat
+    buildCost:Stat
+    memoryCapacity:Stat
+    explosiveness:Stat
+    flammability:Stat
+    radioactivity:Stat
+    charge:Stat
+    heatCapacity:Stat
+    viscosity:Stat
+    temperature:Stat
+    flying:Stat
+    speed:Stat
+    buildSpeed:Stat
+    mineSpeed:Stat
+    mineTier:Stat
+    payloadCapacity:Stat
+    baseDeflectChance:Stat
+    lightningChance:Stat
+    lightningDamage:Stat
+    abilities:Stat
+    canBoost:Stat
+    maxUnits:Stat
+    damageMultiplier:Stat
+    healthMultiplier:Stat
+    speedMultiplier:Stat
+    reloadMultiplier:Stat
+    buildSpeedMultiplier:Stat
+    reactive:Stat
+    healing:Stat
+    immunities:Stat
+    itemCapacity:Stat
+    itemsMoved:Stat
+    launchTime:Stat
+    maxConsecutive:Stat
+    liquidCapacity:Stat
+    powerCapacity:Stat
+    powerUse:Stat
+    powerDamage:Stat
+    powerRange:Stat
+    powerConnections:Stat
+    basePowerGeneration:Stat
+    tiles:Stat
+    input:Stat
+    output:Stat
+    productionTime:Stat
+    maxEfficiency:Stat
+    drillTier:Stat
+    drillSpeed:Stat
+    linkRange:Stat
+    instructions:Stat
+    weapons:Stat
+    bullet:Stat
+    speedIncrease:Stat
+    repairTime:Stat
+    repairSpeed:Stat
+    range:Stat
+    shootRange:Stat
+    inaccuracy:Stat
+    shots:Stat
+    reload:Stat
+    targetsAir:Stat
+    targetsGround:Stat
+    damage:Stat
+    ammo:Stat
+    ammoCapacity:Stat
+    ammoUse:Stat
+    shieldHealth:Stat
+    cooldownTime:Stat
+    moduleTier:Stat
+    unitType:Stat
+    booster:Stat
+    boostEffect:Stat
+    affinities:Stat
+    opposites:Stat
 
-    health: Stat
-    armor: Stat
-    size: Stat
-    displaySize: Stat
-    buildTime: Stat
-    buildCost: Stat
-    memoryCapacity: Stat
-    explosiveness: Stat
-    flammability: Stat
-    radioactivity: Stat
-    charge: Stat
-    heatCapacity: Stat
-    viscosity: Stat
-    temperature: Stat
-    flying: Stat
-    speed: Stat
-    buildSpeed: Stat
-    mineSpeed: Stat
-    mineTier: Stat
-    payloadCapacity: Stat
-    baseDeflectChance: Stat
-    lightningChance: Stat
-    lightningDamage: Stat
-    abilities: Stat
-    canBoost: Stat
-    maxUnits: Stat
-    damageMultiplier: Stat
-    healthMultiplier: Stat
-    speedMultiplier: Stat
-    reloadMultiplier: Stat
-    buildSpeedMultiplier: Stat
-    reactive: Stat
-    healing: Stat
-    immunities: Stat
-    itemCapacity: Stat
-    itemsMoved: Stat
-    launchTime: Stat
-    maxConsecutive: Stat
-    liquidCapacity: Stat
-    powerCapacity: Stat
-    powerUse: Stat
-    powerDamage: Stat
-    powerRange: Stat
-    powerConnections: Stat
-    basePowerGeneration: Stat
-    tiles: Stat
-    input: Stat
-    output: Stat
-    productionTime: Stat
-    maxEfficiency: Stat
-    drillTier: Stat
-    drillSpeed: Stat
-    linkRange: Stat
-    instructions: Stat
-    weapons: Stat
-    bullet: Stat
-    speedIncrease: Stat
-    repairTime: Stat
-    repairSpeed: Stat
-    range: Stat
-    shootRange: Stat
-    inaccuracy: Stat
-    shots: Stat
-    reload: Stat
-    targetsAir: Stat
-    targetsGround: Stat
-    damage: Stat
-    ammo: Stat
-    ammoCapacity: Stat
-    ammoUse: Stat
-    shieldHealth: Stat
-    cooldownTime: Stat
-    moduleTier: Stat
-    unitType: Stat
-    booster: Stat
-    boostEffect: Stat
-    affinities: Stat
-    opposites: Stat
-
-    def __init__(self, name: str, category: StatCat):
+    def __init__(self, name:str, category:StatCat):
         self.category = category
         self.name = name
-        self.id = len(self.all_stat)
-        self.all_stat.append(self)
+        Stat.id = len(self.allStat)
+        Stat.allStat.append(self)
 
 Stat.armor = Stat("armor", StatCat.general)
 Stat.size = Stat("size", StatCat.general)

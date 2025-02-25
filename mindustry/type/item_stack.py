@@ -20,7 +20,7 @@ class ItemStack:
         return copy
     
     @staticmethod
-    def with_items(*items:List[object]) -> List[ItemStack]:
+    def withItems(*items:List[object]) -> List[ItemStack]:
         stacks:List[ItemStack] = []
         for i in range(0, len(items), 2):
             stacks.append(ItemStack(items[i], items[i + 1]))

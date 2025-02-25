@@ -1,4 +1,3 @@
-from multipledispatch import dispatch
 from typing import *
 
 from mindustry.world.consumer import *
@@ -382,3 +381,6 @@ class Block(UnblockableContent):
                     self.consumeBuilder.remove(b)
         self.consumeBuilder.add(consume)
         return consume
+    
+    def getContentType(self) -> ContentType:
+        return ContentType.block

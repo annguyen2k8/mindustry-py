@@ -1,5 +1,5 @@
-from ..content.status_effects import *
-from ..graphics import *
+from mindustry.content.status_effects import *
+from mindustry.graphics import *
 from .status_effect import *
 
 class Liquid:
@@ -26,3 +26,6 @@ class Liquid:
     def __init__(self, name:str, color:Color=Colors.black):
         self.name = name
         self.color = color
+
+    def getContentType(self) -> ContentType:
+        return ContentType.liquid

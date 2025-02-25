@@ -1,4 +1,4 @@
-from ... import Block
+from mindustry.world import *
 
 class ItemIncinerator(Block):
     # public Effect effect = Fx.incinerateSlag;

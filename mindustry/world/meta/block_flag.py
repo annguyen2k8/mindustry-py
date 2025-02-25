@@ -18,9 +18,9 @@ class BlockFlag(Enum):
     unitAssembler:int = 14
     hasFogRadius:int = 15
 
-all_flags = list(BlockFlag)
+allFlags = list(BlockFlag)
 
-all_logic_flags = [
+allLogic = [
     BlockFlag.core, BlockFlag.storage, BlockFlag.generator, BlockFlag.turret,
     BlockFlag.factory, BlockFlag.repair, BlockFlag.battery, BlockFlag.reactor,
     BlockFlag.drill, BlockFlag.shield

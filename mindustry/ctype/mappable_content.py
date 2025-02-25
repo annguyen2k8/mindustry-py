@@ -1,9 +1,10 @@
-from .content import Content
+from . import *
+
+from mindustry import *
 
 class MappableContent(Content):
     name:str
     def __init__(self, name:str) -> None:
         self.name = name
-        # this.name = Vars.content.transformName(name);
-        # Vars.content.handleMappableContent(this);
+        Vars.content.handleMappableContent(self)
         ...

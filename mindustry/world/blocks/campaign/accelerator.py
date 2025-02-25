@@ -1,5 +1,6 @@
-from ...block import *
-from ....graphics import *
+from mindustry.graphics import *
+
+from mindustry.world.block import Block
 
 class Accelerator(Block):
     # launchBlock = Blocks.coreNucleus

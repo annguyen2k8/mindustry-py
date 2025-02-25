@@ -1,20 +1,40 @@
 import io
 import base64
 
-from ..io import *
+from mindustry.io import *
 
-from ..math import *
-from ..game.schematic import *
-from ..content import *
+from mindustry import *
+from mindustry.content import *
+from mindustry.core import *
+from mindustry.ctype import *
+# from mindustry.entities.units import *
+from mindustry.game import *
+# from mindustry.gen import *
+# from mindustry.input import *
+from mindustry.io import *
+from mindustry.world import *
+from mindustry.world.blocks import *
+from mindustry.world.blocks.distribution import *
+from mindustry.world.blocks.legacy import *
+from mindustry.world.blocks.power import *
+from mindustry.world.blocks.sandbox import *
+from mindustry.world.blocks.storage import *
+from mindustry.world.meta import *
+
+from mindustry.world.blocks.distribution import ConstructBlock
+# from mindustry.world.blocks.storage import CoreBlock
+from mindustry.game.schematic import (Schematic, Stile)
 
 class Schematics:
+    header:str = b"msch"
+    
     @staticmethod
     def readBase64(schematic:str) -> Schematic:
         return Schematics.read(io.BytesIO(base64.b64decode(schematic)))
     
     @staticmethod
     def read(_input:io.BytesIO) -> Schematic:
-        for b in  b"msch" :
+        for b in Schematics.header:
             if (b != _input.read(1)[0]):
                 raise Exception("Not a schematic file (missing header).")
         
@@ -37,7 +57,7 @@ class Schematics:
         blocks:dict[int, str] = {}
         length:bytes = stream.readByte()
         for i in range(length):
-            # Block block = Vars.content.getByName(ContentType.block, SaveFileReader.fallback.get(name, name));
+            block:Block = Vars.content.getByName(ContentType.block, name)
             # blocks.put(i, block == null || block instanceof LegacyBlock ? Blocks.air : block);
             name:str = stream.readUTF()
             blocks[i] = name

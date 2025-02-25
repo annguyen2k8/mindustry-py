@@ -1,4 +1,5 @@
-from ..graphics import *
+from mindustry.graphics import *
+from mindustry.ctype import *
 
 class StatusEffect:
     name:str
@@ -22,3 +23,6 @@ class StatusEffect:
     
     def __init__(self, name:str):
         self.name = name
+    
+    def getContentType(self) -> ContentType:
+        return ContentType.status

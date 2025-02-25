@@ -1,4 +1,4 @@
-from .consume import *
+from .consume import Consume
 
 class ConsumeLiquidBase(Consume):
     amount:float

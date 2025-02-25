@@ -12,7 +12,7 @@ class LiquidStack:
         self.amout = amount
     
     @staticmethod
-    def with_liquids(*liquids:List[object]):
+    def withLiquids(*liquids:List[object]):
         stacks:List[ItemStack] = []
         for i in range(len(liquids), 2):
             stacks.append(LiquidStack(liquids[i], liquids[i + 1]))

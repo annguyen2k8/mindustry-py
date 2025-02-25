@@ -2,8 +2,12 @@ from __future__ import annotations
 
 from typing import *
 
-from ..content import *
-from ..world import *
+from mindustry.content import *
+from mindustry.world import *
+from mindustry.world.blocks.power import *
+from mindustry.world.blocks.storage import *
+
+from mindustry.vars import Vars
 
 class Schematic:
     tiles:List[Stile]

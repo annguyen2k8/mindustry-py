@@ -1,6 +1,6 @@
 from mindustry.graphics import *
 
-from mindustry.ctype.unlockable_content import UnblockableContent
+from mindustry.ctype import *
 
 class Item(UnblockableContent):
     color:Color
@@ -26,3 +26,6 @@ class Item(UnblockableContent):
     def __init__(self, name, color:Color=Colors.black) -> None:
         super().__init__(name)
         self.color = color
+    
+    def getContentType(self) -> ContentType:
+        return ContentType.item

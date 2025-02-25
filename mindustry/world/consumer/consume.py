@@ -14,3 +14,7 @@ class Consume:
     
     def boost(self) -> Consume:
         return self.option(True, True)
+    
+    def setUpdate(self, update:bool) -> Consume:
+        self.update = update
+        return self

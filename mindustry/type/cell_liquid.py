@@ -1,5 +1,6 @@
-from .liquid import *
-from ..graphics import *
+from mindustry.graphics import *
+
+from .liquid import Liquid
 
 class CellLiquid(Liquid):
     colorFrom:Color = Colors.white
